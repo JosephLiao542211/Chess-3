@@ -12,7 +12,7 @@ public class BoxController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        if (GameController == null) GameController = FindObjectOfType<GameController>();
+        if (GameController == null) GameController = FindFirstObjectByType<GameController>();
 
         string algebraicName = "";
         algebraicName += (char)(this.transform.position.x - LowestRankY + 'A');
