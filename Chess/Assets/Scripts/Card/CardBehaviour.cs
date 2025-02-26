@@ -1,5 +1,8 @@
 using System;
+using System.Diagnostics;
+using System.Globalization;
 using UnityEngine;
+using Debug = UnityEngine.Debug;
 
 public class CardBehaviour : MonoBehaviour
 {
@@ -80,6 +83,23 @@ public class CardBehaviour : MonoBehaviour
         Collider2D playZoneCollider = playZone.GetComponent<Collider2D>();
         Collider2D cardCollider = GetComponent<Collider2D>();
 
-        return playZoneCollider.bounds.Intersects(cardCollider.bounds);
+        // Get the play zone and card collider bounds
+        Bounds playZoneBounds = playZoneCollider.bounds;
+        Bounds cardBounds = cardCollider.bounds;
+
+        // Create new bounds that ignore the z-axis (set z extents to 0)
+        playZoneBounds.min = new Vector3(playZoneBounds.min.x, playZoneBounds.min.y, 0f);
+        playZoneBounds.max = new Vector3(playZoneBounds.max.x, playZoneBounds.max.y, 0f);
+
+        cardBounds.min = new Vector3(cardBounds.min.x, cardBounds.min.y, 0f);
+        cardBounds.max = new Vector3(cardBounds.max.x, cardBounds.max.y, 0f);
+
+        // Log the updated bounds
+        Debug.Log(playZoneBounds);
+        Debug.Log(cardBounds);
+
+        // Check if the bounds intersect without considering the z-axis
+        return playZoneBounds.Intersects(cardBounds);
     }
+
 }

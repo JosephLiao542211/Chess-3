@@ -68,7 +68,7 @@ public class DeckManager : MonoBehaviour
     {
         if (deck.Count <= 0)
         {
-            Debug.LogWarning("Deck is empty, cannot draw card.");
+            deck = GenerateDeck();
             return;
         }
 
