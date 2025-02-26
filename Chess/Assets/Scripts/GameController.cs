@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour
     public GameObject BlackPieces;
     public GameObject SelectedPiece;
     public bool WhiteTurn = true;
+    public Camera mainCamera;
 
     // Use this for initialization
     void Start()

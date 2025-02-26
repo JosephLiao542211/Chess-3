@@ -351,7 +351,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Sprites/CardSpirtes
+    - Assets/Sprites
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -370,7 +370,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 2.666626}
     m_SelectedIDs: e4810000
     m_LastClickedID: 33252
-    m_ExpandedIDs: 000000002c700000
+    m_ExpandedIDs: 00000000a4740000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -399,7 +399,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000002c700000
+    m_ExpandedIDs: 00000000a4740000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1104,7 +1104,7 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 8.195506, y: -0.09092232, z: -0.13184041}
+    m_Target: {x: -15.637597, y: 4.204327, z: -0.11031899}
     speed: 2
     m_Value: {x: 8.195506, y: -0.09092232, z: -0.13184041}
   m_RenderMode: 0
@@ -1156,7 +1156,7 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 13.660881
+    m_Target: 12.765762
     speed: 2
     m_Value: 13.660881
   m_Ortho:
