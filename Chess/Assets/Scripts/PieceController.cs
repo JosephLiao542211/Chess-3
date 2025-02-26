@@ -30,7 +30,7 @@ public class PieceController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        if (GameController == null) GameController = FindObjectOfType<GameController>();
+        if (GameController == null) GameController = FindFirstObjectByType<GameController>();
         if (this.name.Contains("Knight")) MoveSpeed *= 2;
     }
 
