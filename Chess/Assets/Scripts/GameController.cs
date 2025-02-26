@@ -62,7 +62,21 @@ public class GameController : MonoBehaviour
         bool hasValidMoves = false;
 
         WhiteTurn = !WhiteTurn;
-
+        
+         // AL Edit: Added the logic to turn the board 
+        // Rotate the camera 180 degrees to have the current player at the bottom
+        mainCamera.transform.Rotate(0, 0, 180);
+        
+        // Rotate each piece to keep them facing the right way
+        foreach (Transform piece in WhitePieces.transform)
+        {
+            piece.Rotate(0, 0, 180);
+        }
+        foreach (Transform piece in BlackPieces.transform)
+        {
+            piece.Rotate(0, 0, 180);
+        }
+        
         if (WhiteTurn)
         {
             foreach (Transform piece in WhitePieces.transform)
