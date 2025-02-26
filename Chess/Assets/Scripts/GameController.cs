@@ -10,11 +10,12 @@ public class GameController : MonoBehaviour
     public GameObject BlackPieces;
     public GameObject SelectedPiece;
     public bool WhiteTurn = true;
+    private Camera mainCamera;
 
     // Use this for initialization
     void Start()
     {
-
+        mainCamera = Camera.main; // Find the main camera
     }
 
     // Update is called once per frame
