@@ -4,16 +4,19 @@ using System.Diagnostics;
 using UnityEngine;
 using Random = UnityEngine.Random;
 using Debug = UnityEngine.Debug;
+using System.Linq;
 
 public class DeckManager : MonoBehaviour
 {
     public static DeckManager Instance { get; private set; }
-
     public List<CardData> deck = new List<CardData>();
+    public int maxDraw = 4;
     public GameObject cardPrefab;
+    private GameController gameController;
 
-    // Dictionary to track which cards are in which slots
-    public Dictionary<Transform, GameObject> slotCards = new Dictionary<Transform, GameObject>();
+    // Separate dictionaries for white and black player slots
+    public Dictionary<Transform, GameObject> whiteSlotCards = new Dictionary<Transform, GameObject>();
+    public Dictionary<Transform, GameObject> blackSlotCards = new Dictionary<Transform, GameObject>();
 
     private void Awake()
     {
@@ -27,16 +30,57 @@ public class DeckManager : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        // Determine which slots should be active based on the turn
+        Dictionary<Transform, GameObject> activeSlots = gameController.WhiteTurn ? whiteSlotCards : blackSlotCards;
+        Dictionary<Transform, GameObject> inactiveSlots = gameController.WhiteTurn ? blackSlotCards : whiteSlotCards;
+
+        // Enable cards for the active player
+        foreach (var slot in activeSlots)
+        {
+            if (slot.Value != null)
+            {
+                slot.Value.SetActive(true);
+            }
+        }
+
+        // Disable cards for the inactive player
+        foreach (var slot in inactiveSlots)
+        {
+            if (slot.Value != null)
+            {
+                slot.Value.SetActive(false);
+            }
+        }
+    }
+
+
     private void Start()
     {
+        // Get reference to the GameController
+        gameController = FindFirstObjectByType<GameController>();
+
+        if (gameController == null)
+        {
+            Debug.LogError("GameController not found!");
+        }
+
         deck = GenerateDeck();
         ShuffleDeck();
 
-        // Automatically find Pos1 to Pos4 and add them to the dictionary
+        // Initialize slots for white player (Pos1 and Pos2)
         for (int i = 1; i <= 4; i++)
         {
             Transform slot = GameObject.Find("Pos" + i).transform;
-            slotCards.Add(slot, null);
+            whiteSlotCards.Add(slot, null);
+        }
+
+        // Initialize slots for black player (Pos3 and Pos4)
+        for (int i = 1; i <= 4; i++)
+        {
+            Transform slot = GameObject.Find("Pos" + i).transform;
+            blackSlotCards.Add(slot, null);
         }
     }
 
@@ -63,44 +107,73 @@ public class DeckManager : MonoBehaviour
             deck[randomIndex] = temp;
         }
     }
-
     public void DrawCard()
     {
+        
+        if (gameController == null) return;
+
+        // Regenerate deck if empty
         if (deck.Count <= 0)
         {
-            Debug.LogWarning("Deck is empty, cannot draw card.");
-            return;
+            Debug.Log("Deck is empty. Generating new deck.");
+            deck = GenerateDeck();
+            ShuffleDeck();
         }
 
-        // Find first available slot
-        Transform availableSlot = FindFirstAvailableSlot();
+        // Get current player's slots
+        Dictionary<Transform, GameObject> currentSlots = gameController.WhiteTurn ? whiteSlotCards : blackSlotCards;
 
-        if (availableSlot == null)
+        
+
+        // Find an available slot
+        Transform availableSlot = FindFirstAvailableSlot(currentSlots);
+
+        // If there's an available slot and cards in the deck, draw a card
+        if (availableSlot != null && deck.Count > 0 && maxDraw > 0)
         {
-            Debug.LogWarning("No available slots to place card.");
-            return;
+            // Draw and display card
+            --maxDraw;
+            CardData card = deck[0];
+            deck.RemoveAt(0);
+            currentSlots[availableSlot] = DisplayCard(card, availableSlot);
         }
-
-        // Draw card and place in available slot
-        CardData drawnCard = deck[0];
-        deck.RemoveAt(0);
-        GameObject cardObject = DisplayCard(drawnCard, availableSlot);
-
-        // Update dictionary
-        slotCards[availableSlot] = cardObject;
+        else if (availableSlot == null)
+        {
+            Debug.Log("No available slots for the current player. Current slots: " +
+     string.Join(", ", currentSlots.Select(kv => $"{kv.Key}: {kv.Value}")));
+        }
+        else
+        {
+            Debug.Log("No cards left in the deck.");
+        }
     }
 
-    private Transform FindFirstAvailableSlot()
+    private Transform FindFirstAvailableSlot(Dictionary<Transform, GameObject> slots)
     {
-        foreach (var slot in slotCards.Keys)
+        foreach (var slot in slots.Keys)
         {
-            if (slotCards[slot] == null)
+            if (slots[slot] == null)
             {
                 return slot;
             }
         }
         return null; // No available slots
     }
+
+    public int CountAvailableSlots(Dictionary<Transform, GameObject> slots)
+    {
+        int count = 0;
+        foreach (var slot in slots.Values)
+        {
+            if (slot == null)
+            {
+                count++;
+            }
+        }
+        return count;
+    }
+
+
 
     GameObject DisplayCard(CardData cardData, Transform slotPosition)
     {
@@ -112,20 +185,39 @@ public class DeckManager : MonoBehaviour
     // Method to clear a specific slot
     public void ClearSlot(Transform slot)
     {
-        if (slotCards.ContainsKey(slot) && slotCards[slot] != null)
+        // Check which dictionary contains the slot
+        if (whiteSlotCards.ContainsKey(slot) && whiteSlotCards[slot] != null)
         {
-            Destroy(slotCards[slot]);
-            slotCards[slot] = null;
+            Destroy(whiteSlotCards[slot]);
+            whiteSlotCards[slot] = null;
+        }
+        else if (blackSlotCards.ContainsKey(slot) && blackSlotCards[slot] != null)
+        {
+            Destroy(blackSlotCards[slot]);
+            blackSlotCards[slot] = null;
+        }
+    }
+
+    // Method to clear all slots for a specific player
+    public void ClearPlayerSlots(bool isWhitePlayer)
+    {
+        Dictionary<Transform, GameObject> slotsToCheck = isWhitePlayer ? whiteSlotCards : blackSlotCards;
+
+        foreach (var slot in slotsToCheck.Keys)
+        {
+            if (slotsToCheck[slot] != null)
+            {
+                Destroy(slotsToCheck[slot]);
+                slotsToCheck[slot] = null;
+            }
         }
     }
 
     // Method to clear all slots
     public void ClearAllSlots()
     {
-        foreach (var slot in slotCards.Keys)
-        {
-            ClearSlot(slot);
-        }
+        ClearPlayerSlots(true);  // Clear white player slots
+        ClearPlayerSlots(false); // Clear black player slots
     }
 
     private void OnMouseDown()
