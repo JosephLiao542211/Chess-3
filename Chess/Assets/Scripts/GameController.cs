@@ -65,6 +65,16 @@ public class GameController : MonoBehaviour
         }
     }
 
+    public void SpendMana()
+    {
+        if (WhiteTurn && whiteMana > 0){
+            whiteMana--;
+        }
+        else if (blackMana > 0){
+            blackMana--;
+        }
+    }
+
     public void EndTurn()
     {
         bool kingIsInCheck = false;
