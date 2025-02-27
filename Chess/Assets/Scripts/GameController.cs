@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using static System.Math;
 using System.Linq;
 using UnityEngine;
 
@@ -9,6 +10,8 @@ public class GameController : MonoBehaviour
     public GameObject WhitePieces;
     public GameObject BlackPieces;
     public int TurnCount = 1;
+    public int whiteMana;
+    public int blackMana;
     public GameObject SelectedPiece;
     public bool WhiteTurn = true;
     public int MaxMana = 10;
@@ -71,13 +74,13 @@ public class GameController : MonoBehaviour
         if (!WhiteTurn)
         {
             TurnCount++;
-            whiteMana = min(TurnCount, MaxMana);
-            Debug.log(whiteMana);
+            whiteMana = Min(TurnCount, MaxMana);
+            Debug.Log(whiteMana);
         }
         else
         {
-            blackMana = min(TurnCount, MaxMana);
-            Debug.log(blackMana);
+            blackMana = Min(TurnCount, MaxMana);
+            Debug.Log(blackMana);
         }
 
         WhiteTurn = !WhiteTurn;
