@@ -102,6 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2e634d1251a8b24481907e0701f1554, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardName: 
   playZone: {fileID: 0}
 --- !u!61 &8484407122278387872
 BoxCollider2D:

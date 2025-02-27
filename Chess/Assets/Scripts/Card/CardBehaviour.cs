@@ -9,9 +9,10 @@ public class CardBehaviour : MonoBehaviour
     public Action onPlayAction; // Function to run when played
     private bool isDragging = false;
     private Vector3 offset;
+    public PawnDestroyer pawnDestroyer;
     private Transform currentSlot; // The slot the card started in
     private bool isWhitePlayerCard; // Whether this card belongs to the white player
-
+    public string cardName;// Name of the card
     [SerializeField] private GameObject playZone; // Assign the special play zone in Inspector
 
     void Start()
@@ -20,10 +21,70 @@ public class CardBehaviour : MonoBehaviour
         {
             playZone = GameObject.FindWithTag("PlayZone"); // Make sure PlayZone has a tag set in the Inspector
         }
+        if (pawnDestroyer == null)
+        {
+            pawnDestroyer = FindFirstObjectByType<PawnDestroyer>(); // Try to find it if not assigned
+        }
 
         // Find the card's original slot by checking DeckManager's dictionaries
         FindOriginalSlot();
     }
+
+
+
+
+
+
+    //Ability type:
+
+
+    private void ExecuteAbility(string cardName)
+    {
+        Debug.Log($"Executing ability for {cardName}");
+
+        switch (cardName)
+        {
+            case "Card 1":
+                Debug.Log("Card1: kill a pawn");
+                pawnDestroyer.Activate();
+                break;
+
+            case "Card 2":
+                Debug.Log("Card2 played");
+                break;
+
+            case "Card 3":
+                Debug.Log("Card3: Changing turn.");
+          
+                break;
+
+            case "Card 4":
+                Debug.Log("Card4: No special ability.");
+                break;
+
+            case "Card 5":
+                Debug.Log("Card5: No special ability.");
+                break;
+
+            case "Card 6":
+                Debug.Log("Card6: No special ability.");
+                break;
+
+            case "Card 7":
+                Debug.Log("Card7: No special ability.");
+                break;
+
+            default:
+                Debug.LogWarning($"Unknown card: {cardName}");
+                break;
+        }
+    }
+
+
+
+
+
+
 
     private void FindOriginalSlot()
     {
@@ -82,7 +143,7 @@ public class CardBehaviour : MonoBehaviour
         if (IsInPlayZone())
         {
             // Execute the special action when played
-            onPlayAction?.Invoke();
+            ExecuteAbility(cardName);
 
             // Update appropriate DeckManager's dictionary (set previous slot to null)
             if (currentSlot != null)
@@ -136,4 +197,8 @@ public class CardBehaviour : MonoBehaviour
         // Check if the bounds intersect without considering the z-axis
         return playZoneBounds.Intersects(cardBounds);
     }
+
+
+
+
 }

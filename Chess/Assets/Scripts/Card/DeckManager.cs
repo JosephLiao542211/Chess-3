@@ -179,6 +179,7 @@ public class DeckManager : MonoBehaviour
     {
         GameObject newCard = Instantiate(cardPrefab, slotPosition.position, Quaternion.identity);
         newCard.GetComponent<SpriteRenderer>().sprite = cardData.cardSprite;
+        newCard.GetComponent<CardBehaviour>().cardName = cardData.cardName;
         return newCard;
     }
 

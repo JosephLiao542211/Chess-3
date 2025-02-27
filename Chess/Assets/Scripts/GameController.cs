@@ -10,13 +10,8 @@ public class GameController : MonoBehaviour
     public GameObject BlackPieces;
     public GameObject SelectedPiece;
     public bool WhiteTurn = true;
-<<<<<<< HEAD
-    public Camera mainCamera;
-=======
     public DeckManager deckManager; // Assign it in the Unity Inspector
     public Camera mainCamera;
-
->>>>>>> main
 
     // Use this for initialization
     void Start()

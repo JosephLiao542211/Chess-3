@@ -103,6 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deck: []
+  maxDraw: 4
   cardPrefab: {fileID: 7198231603537057425, guid: b7c9ac26079fc8c458f00d7ca0cf9084,
     type: 3}
 --- !u!61 &8805619058482310348
