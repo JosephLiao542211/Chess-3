@@ -9,6 +9,8 @@ public class PieceController : MonoBehaviour
     public GameObject BlackPieces;
     public Sprite QueenSprite;
 
+    public int numLives = 1;
+
     public float MoveSpeed = 20;
 
     public float HighestRankY = 3.5f;
@@ -47,6 +49,29 @@ public class PieceController : MonoBehaviour
             {
                 MoveSideBySide();
             }
+        }
+    }
+
+    public void LoseLife()
+    {
+        numLives--;
+
+        if (numLives <= 0)
+        {
+            // Capture the piece
+            if (this.tag == "White")
+            {
+                GameController.WhitePieces.transform.SetParent(null);
+            }
+            else if (this.tag == "Black")
+            {
+                GameController.BlackPieces.transform.SetParent(null);
+            }
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            Debug.Log($"{this.name} lost a life! Remaining lives: {numLives}");
         }
     }
 
@@ -91,6 +116,28 @@ public class PieceController : MonoBehaviour
 
         if (castling || ValidateMovement(oldPosition, newPosition, out encounteredEnemy))
         {
+            // Check if the new position has an enemy piece
+            if (encounteredEnemy != null)
+            {
+                PieceController enemyPiece = encounteredEnemy.GetComponent<PieceController>();
+
+                // If the enemy piece has more than 1 life, reduce its life and stop the move
+                if (enemyPiece.numLives > 1)
+                {
+                    enemyPiece.LoseLife();
+
+                    // Switch turns after the attack
+                    GameController.DeselectPiece();
+                    GameController.EndTurn();
+                    return false; // Stop the move
+                }
+                else
+                {
+                    // If the enemy piece has 1 life, capture it
+                    enemyPiece.LoseLife();
+                }
+            }
+
             // Double-step
             if (this.name.Contains("Pawn") && Mathf.Abs(oldPosition.y - newPosition.y) == 2)
             {
@@ -126,7 +173,6 @@ public class PieceController : MonoBehaviour
             this.newPositionX = newPosition;
             MovingY = true; // Start movement
 
-            Destroy(encounteredEnemy);
             return true;
         }
         else
