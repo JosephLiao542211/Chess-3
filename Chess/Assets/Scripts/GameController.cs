@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using static System.Math;
 using System.Linq;
 using UnityEngine;
 
@@ -8,20 +9,22 @@ public class GameController : MonoBehaviour
     public GameObject Board;
     public GameObject WhitePieces;
     public GameObject BlackPieces;
+    public int TurnCount = 1;
+    public int whiteMana;
+    public int blackMana;
     public GameObject SelectedPiece;
     public bool WhiteTurn = true;
-<<<<<<< HEAD
-    public Camera mainCamera;
-=======
+    public int MaxMana = 10;
     public DeckManager deckManager; // Assign it in the Unity Inspector
     public Camera mainCamera;
-
->>>>>>> main
 
     // Use this for initialization
     void Start()
     {
         mainCamera = Camera.main; // Find the main camera
+        //Set initial mana values
+        whiteMana = 1;
+        blackMana = 1;
     }
 
     // Update is called once per frame
@@ -63,11 +66,34 @@ public class GameController : MonoBehaviour
         }
     }
 
+    public void SpendMana(int cost = 1)
+    {
+        if (WhiteTurn && whiteMana > 0){
+            whiteMana -= cost;
+        }
+        else if (blackMana > 0){
+            blackMana -= cost;
+        }
+    }
+
     public void EndTurn()
     {
         bool kingIsInCheck = false;
         bool hasValidMoves = false;
         
+
+        //Update mana values
+        if (!WhiteTurn)
+        {
+            TurnCount++;
+            whiteMana = Min(TurnCount, MaxMana);
+            Debug.Log(whiteMana);
+        }
+        else
+        {
+            blackMana = Min(TurnCount, MaxMana);
+            Debug.Log(blackMana);
+        }
 
         WhiteTurn = !WhiteTurn;
         
