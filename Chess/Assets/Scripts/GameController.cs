@@ -65,13 +65,13 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public void SpendMana()
+    public void SpendMana(int cost = 1)
     {
         if (WhiteTurn && whiteMana > 0){
-            whiteMana--;
+            whiteMana -= cost;
         }
         else if (blackMana > 0){
-            blackMana--;
+            blackMana -= cost;
         }
     }
 
