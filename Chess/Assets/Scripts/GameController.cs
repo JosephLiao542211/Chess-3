@@ -8,14 +8,19 @@ public class GameController : MonoBehaviour
     public GameObject Board;
     public GameObject WhitePieces;
     public GameObject BlackPieces;
+    public int TurnCount = 1;
     public GameObject SelectedPiece;
     public bool WhiteTurn = true;
+    public int MaxMana = 10;
     private Camera mainCamera;
 
     // Use this for initialization
     void Start()
     {
         mainCamera = Camera.main; // Find the main camera
+        //Set initial mana values
+        whiteMana = 1;
+        blackMana = 1;
     }
 
     // Update is called once per frame
@@ -61,6 +66,19 @@ public class GameController : MonoBehaviour
     {
         bool kingIsInCheck = false;
         bool hasValidMoves = false;
+
+        //Update mana values
+        if (!WhiteTurn)
+        {
+            TurnCount++;
+            whiteMana = min(TurnCount, MaxMana);
+            Debug.log(whiteMana);
+        }
+        else
+        {
+            blackMana = min(TurnCount, MaxMana);
+            Debug.log(blackMana);
+        }
 
         WhiteTurn = !WhiteTurn;
         
