@@ -2957,6 +2957,7 @@ MonoBehaviour:
   BlackPieces: {fileID: 1620984131}
   SelectedPiece: {fileID: 0}
   WhiteTurn: 1
+  deckManager: {fileID: 579451780}
   mainCamera: {fileID: 1343649308}
 --- !u!4 &541102416
 Transform:
@@ -3294,6 +3295,18 @@ MonoBehaviour:
   DoubleStep: 0
   MovingY: 0
   MovingX: 0
+--- !u!114 &579451780 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5086197592281253317, guid: e80df291c97fbd74699ce789a5c54ee9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1124328241}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9cbd774247d5794486754cc9c6e067b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &612869358
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3571,7 +3584,7 @@ Transform:
   m_GameObject: {fileID: 722956783}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.55555, y: -2, z: -0.049442295}
+  m_LocalPosition: {x: 6, y: -6, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4985,7 +4998,7 @@ Transform:
   m_GameObject: {fileID: 929740015}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.555145, y: 0, z: -0.049442295}
+  m_LocalPosition: {x: 6, y: 2, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5196,12 +5209,12 @@ PrefabInstance:
     - target: {fileID: 6712566765300022561, guid: e80df291c97fbd74699ce789a5c54ee9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.35
+      value: 11.43
       objectReference: {fileID: 0}
     - target: {fileID: 6712566765300022561, guid: e80df291c97fbd74699ce789a5c54ee9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.69
+      value: 0.28
       objectReference: {fileID: 0}
     - target: {fileID: 6712566765300022561, guid: e80df291c97fbd74699ce789a5c54ee9,
         type: 3}
@@ -6418,7 +6431,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 7.5589643
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -8910,7 +8923,7 @@ Transform:
   m_GameObject: {fileID: 1732853336}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.5551453, y: 1.9187346, z: -0.049442295}
+  m_LocalPosition: {x: 6, y: 6, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9067,7 +9080,7 @@ Transform:
   m_GameObject: {fileID: 1798101200}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.5551453, y: -1, z: -0.049442295}
+  m_LocalPosition: {x: 6, y: -2, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

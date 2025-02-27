@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour
     public GameObject BlackPieces;
     public GameObject SelectedPiece;
     public bool WhiteTurn = true;
+    public DeckManager deckManager; // Assign it in the Unity Inspector
     public Camera mainCamera;
 
 
@@ -62,10 +63,12 @@ public class GameController : MonoBehaviour
     {
         bool kingIsInCheck = false;
         bool hasValidMoves = false;
+        
 
         WhiteTurn = !WhiteTurn;
         
-         // AL Edit: Added the logic to turn the board 
+        deckManager.maxDraw = 4;
+        // AL Edit: Added the logic to turn the board 
         // Rotate the camera 180 degrees to have the current player at the bottom
         mainCamera.transform.Rotate(0, 0, 180);
         
@@ -81,6 +84,7 @@ public class GameController : MonoBehaviour
         
         if (WhiteTurn)
         {
+            deckManager.maxDraw = deckManager.CountAvailableSlots(deckManager.whiteSlotCards);
             foreach (Transform piece in WhitePieces.transform)
             {
                 if (hasValidMoves == false && HasValidMoves(piece.gameObject))
@@ -100,6 +104,7 @@ public class GameController : MonoBehaviour
         }
         else
         {
+            deckManager.maxDraw = deckManager.CountAvailableSlots(deckManager.blackSlotCards);
             foreach (Transform piece in BlackPieces.transform)
             {
                 if (hasValidMoves == false && HasValidMoves(piece.gameObject))
