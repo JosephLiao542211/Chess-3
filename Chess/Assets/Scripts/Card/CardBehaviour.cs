@@ -10,6 +10,7 @@ public class CardBehaviour : MonoBehaviour
     private bool isDragging = false;
     private Vector3 offset;
     public PawnDestroyer pawnDestroyer;
+    public HealthAdder addHealth;
     private Transform currentSlot; // The slot the card started in
     private bool isWhitePlayerCard; // Whether this card belongs to the white player
     public string cardName;// Name of the card
@@ -24,6 +25,10 @@ public class CardBehaviour : MonoBehaviour
         if (pawnDestroyer == null)
         {
             pawnDestroyer = FindFirstObjectByType<PawnDestroyer>(); // Try to find it if not assigned
+        }
+        if (addHealth == null)
+        {
+            addHealth = FindFirstObjectByType<HealthAdder>(); // Try to find it if not assigned
         }
 
         // Find the card's original slot by checking DeckManager's dictionaries
@@ -50,7 +55,9 @@ public class CardBehaviour : MonoBehaviour
                 break;
 
             case "Card 2":
-                Debug.Log("Card2 played");
+                addHealth.Activate();
+                Debug.Log("Card2: Add Health to a Knight");
+
                 break;
 
             case "Card 3":

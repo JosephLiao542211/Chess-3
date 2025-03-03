@@ -164,6 +164,8 @@ public class GameController : MonoBehaviour
                 Checkmate();
             }
         }
+
+        
     }
 
     bool HasValidMoves(GameObject piece)

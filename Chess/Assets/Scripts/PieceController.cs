@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
+using Debug = UnityEngine.Debug;
 
 public class PieceController : MonoBehaviour
 {
@@ -10,6 +12,8 @@ public class PieceController : MonoBehaviour
     public Sprite QueenSprite;
 
     public float MoveSpeed = 20;
+    public int numLives = 1;
+
 
     public float HighestRankY = 3.5f;
     public float LowestRankY = -3.5f;
@@ -30,6 +34,7 @@ public class PieceController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        numLives = 1;
         if (GameController == null) GameController = FindFirstObjectByType<GameController>();
         if (this.name.Contains("Knight")) MoveSpeed *= 2;
     }
@@ -49,6 +54,30 @@ public class PieceController : MonoBehaviour
             }
         }
     }
+
+    public void LoseLife()
+    {
+        numLives--;
+
+        if (numLives <= 0)
+        {
+            // Capture the piece
+            if (this.tag == "White")
+            {
+                GameController.WhitePieces.transform.SetParent(null);
+            }
+            else if (this.tag == "Black")
+            {
+                GameController.BlackPieces.transform.SetParent(null);
+            }
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            Debug.Log($"{this.name} lost a life! Remaining lives: {numLives}");
+        }
+    }
+
 
     void OnMouseDown()
     {
@@ -91,16 +120,42 @@ public class PieceController : MonoBehaviour
 
         if (castling || ValidateMovement(oldPosition, newPosition, out encounteredEnemy))
         {
+            if (encounteredEnemy != null)
+            {
+                PieceController enemyPiece = encounteredEnemy.GetComponent<PieceController>();
+
+                // If the enemy piece has more than 1 life, reduce its life and stop the move
+                if (enemyPiece.numLives > 1)
+                {
+                    enemyPiece.LoseLife();
+
+                    // Switch turns after the attack
+                    GameController.DeselectPiece();
+                    GameController.EndTurn();
+                    return false; // Stop the move
+                }
+                else
+                {
+                    // If the enemy piece has 1 life, capture it
+                    enemyPiece.LoseLife();
+                }
+            }
+
             // Double-step
+
             if (this.name.Contains("Pawn") && Mathf.Abs(oldPosition.y - newPosition.y) == 2)
             {
                 this.DoubleStep = true;
             }
+
+
             // Promotion
             else if (this.name.Contains("Pawn") && (newPosition.y == HighestRankY || newPosition.y == LowestRankY))
             {
                 this.Promote();
             }
+
+
             // Castling
             else if (this.name.Contains("King") && Mathf.Abs(oldPosition.x - newPosition.x) == 2)
             {
@@ -120,13 +175,10 @@ public class PieceController : MonoBehaviour
                 }
             }
             this.moved = true;
-
             this.newPositionY = newPosition;
             this.newPositionY.x = this.transform.position.x;
             this.newPositionX = newPosition;
             MovingY = true; // Start movement
-
-            Destroy(encounteredEnemy);
             return true;
         }
         else
