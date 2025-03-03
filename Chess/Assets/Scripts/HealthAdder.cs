@@ -1,37 +1,43 @@
+using System.Diagnostics;
 using UnityEngine;
-using UnityEngine.UI;
+using Debug = UnityEngine.Debug;
 
-public class AddHealthButton : MonoBehaviour
+public class HealthAdder : MonoBehaviour
 {
     public GameController gameController; // Reference to the GameController
-    private bool isSelectingKnight = false; // Tracks whether we're in "select knight" mode
+    private bool isActive = false; // Tracks whether the listener is active
 
-    void Start()
+    // Public method to activate the listener
+    public void Activate()
     {
-        // Get the Button component and add a listener for the click event
-        Button button = GetComponent<Button>();
-        button.onClick.AddListener(OnButtonClick);
+        isActive = true;
+        Debug.Log("Knight health listener activated. Select a knight to add +1 health.");
     }
 
-    void OnButtonClick()
+    // Public method to deactivate the listener
+    public void Deactivate()
     {
-        // Toggle "select knight" mode
-        isSelectingKnight = !isSelectingKnight;
+        isActive = false;
+        Debug.Log("Knight health listener deactivated.");
+    }
 
-        if (isSelectingKnight)
+    // Toggle the active state
+    public void ToggleActive()
+    {
+        if (isActive)
         {
-            Debug.Log("Select a knight to add +1 health.");
+            Deactivate();
         }
         else
         {
-            Debug.Log("Knight selection canceled.");
+            Activate();
         }
     }
 
     void Update()
     {
-        // If we're in "select knight" mode, check for mouse clicks
-        if (isSelectingKnight && Input.GetMouseButtonDown(0))
+        // Only check for mouse clicks if the listener is active
+        if (isActive && Input.GetMouseButtonDown(0))
         {
             // Raycast to detect which piece was clicked
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -40,7 +46,6 @@ public class AddHealthButton : MonoBehaviour
             if (hit.collider != null)
             {
                 PieceController piece = hit.collider.GetComponent<PieceController>();
-
                 // Check if the clicked piece is a knight
                 if (piece != null && piece.name.Contains("Knight"))
                 {
@@ -48,8 +53,8 @@ public class AddHealthButton : MonoBehaviour
                     piece.numLives++;
                     Debug.Log($"{piece.name} now has {piece.numLives} lives.");
 
-                    // Exit "select knight" mode
-                    isSelectingKnight = false;
+                    // Auto-deactivate after successfully adding health
+                    Deactivate();
                 }
                 else
                 {
