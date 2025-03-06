@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using static System.Math;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class GameController : MonoBehaviour
@@ -20,6 +21,8 @@ public class GameController : MonoBehaviour
     public int MaxMana = 10;
     public DeckManager deckManager; // Assign it in the Unity Inspector
     public Camera mainCamera;
+    public Button endTurnWhite;
+    public Button endTurnBlack;
 
     public TextMeshProUGUI WhiteManaText;
     public TextMeshProUGUI BlackManaText;
@@ -34,12 +37,21 @@ public class GameController : MonoBehaviour
         whiteManaSpent = 0;
         blackManaSpent = 0;
         UpdateManaUI();
+        //Buttons
+        endTurnWhite.onClick.AddListener(() => ButtonEndTurn(true));
+        endTurnBlack.onClick.AddListener(() => ButtonEndTurn(false));
     }
 
     // Update is called once per frame
     void Update()
     {
+        
+    }
 
+    void ButtonEndTurn(bool White){
+        if ((White && WhiteTurn) || (!White && !WhiteTurn)){
+            EndTurn();
+        }
     }
 
     public void SelectPiece(GameObject piece)

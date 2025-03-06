@@ -482,7 +482,7 @@ public class PieceController : MonoBehaviour
                 if (GameController.SelectedPiece != null)
                 {
                     GameController.DeselectPiece();
-                    GameController.EndTurn();
+                    //GameController.EndTurn();
                 }
             }
         }
