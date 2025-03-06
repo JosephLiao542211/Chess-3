@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using static System.Math;
 using System.Linq;
 using UnityEngine;
+using TMPro;
 
 public class GameController : MonoBehaviour
 {
@@ -12,11 +13,16 @@ public class GameController : MonoBehaviour
     public int TurnCount = 1;
     public int whiteMana;
     public int blackMana;
+    public int whiteManaSpent;
+    public int blackManaSpent;
     public GameObject SelectedPiece;
     public bool WhiteTurn = true;
     public int MaxMana = 10;
     public DeckManager deckManager; // Assign it in the Unity Inspector
     public Camera mainCamera;
+
+    public TextMeshProUGUI WhiteManaText;
+    public TextMeshProUGUI BlackManaText;
 
     // Use this for initialization
     void Start()
@@ -25,6 +31,9 @@ public class GameController : MonoBehaviour
         //Set initial mana values
         whiteMana = 1;
         blackMana = 1;
+        whiteManaSpent = 0;
+        blackManaSpent = 0;
+        UpdateManaUI();
     }
 
     // Update is called once per frame
@@ -66,14 +75,32 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public void SpendMana(int cost = 1)
-    {
-        if (WhiteTurn && whiteMana > 0){
-            whiteMana -= cost;
+    public bool SpendMana(int cost = 1)
+    {   
+        if (WhiteTurn){
+            if (cost == -1) {
+                cost = (int)Floor((decimal)whiteMana/2);
+            }
+
+            if ((whiteMana - whiteManaSpent - cost) < 0){
+                return false;
+            }
+            whiteManaSpent += cost;
         }
-        else if (blackMana > 0){
-            blackMana -= cost;
+        else if (!WhiteTurn){
+            if (cost == -1) {
+                cost = (int)Floor((decimal)blackMana/2);
+            }
+
+            if ((blackMana - blackManaSpent - cost) < 0){
+                return false;
+            }
+        
+            blackManaSpent += cost;
         }
+
+        UpdateManaUI();
+        return true;
     }
 
     public void EndTurn()
@@ -87,13 +114,17 @@ public class GameController : MonoBehaviour
         {
             TurnCount++;
             whiteMana = Min(TurnCount, MaxMana);
+            whiteManaSpent = 0;
             Debug.Log(whiteMana);
         }
         else
         {
             blackMana = Min(TurnCount, MaxMana);
+            blackManaSpent = 0;
             Debug.Log(blackMana);
         }
+
+        UpdateManaUI();
 
         WhiteTurn = !WhiteTurn;
         
@@ -192,5 +223,11 @@ public class GameController : MonoBehaviour
     void Checkmate()
     {
         Debug.Log("Checkmate!");
+    }
+
+    void UpdateManaUI()
+    {
+        WhiteManaText.text = "White Mana: " + (whiteMana - whiteManaSpent);
+        BlackManaText.text = "Black Mana " + (blackMana - blackManaSpent);
     }
 }
