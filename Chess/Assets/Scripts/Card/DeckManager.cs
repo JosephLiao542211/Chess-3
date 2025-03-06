@@ -92,6 +92,7 @@ public class DeckManager : MonoBehaviour
             CardData card = new CardData();
             card.cardName = "Card " + (i + 1);
             card.cardSprite = Resources.Load<Sprite>("CardSprites/Card" + (i + 1)); // Ensure sprites are in "Resources/CardSprites/"
+            card.cardCost = 1;//Replace with a list of ints holding the card costs
             newDeck.Add(card);
         }
         return newDeck;
@@ -180,6 +181,7 @@ public class DeckManager : MonoBehaviour
         GameObject newCard = Instantiate(cardPrefab, slotPosition.position, Quaternion.identity);
         newCard.GetComponent<SpriteRenderer>().sprite = cardData.cardSprite;
         newCard.GetComponent<CardBehaviour>().cardName = cardData.cardName;
+        newCard.GetComponent<CardBehaviour>().cardCost = cardData.cardCost;
         return newCard;
     }
 
