@@ -3195,6 +3195,51 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 505726496}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &508572851
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 508572852}
+  - component: {fileID: 508572853}
+  m_Layer: 0
+  m_Name: ManaSurge
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &508572852
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508572851}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4.837501, y: 4.1594887, z: -0.11348005}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 587116196}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &508572853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508572851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb15520a914a33f4db82c959182906dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameController: {fileID: 0}
 --- !u!1001 &523533373
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3294,6 +3339,8 @@ MonoBehaviour:
   TurnCount: 1
   whiteMana: 0
   blackMana: 0
+  whiteManaSpent: 0
+  blackManaSpent: 0
   SelectedPiece: {fileID: 0}
   WhiteTurn: 1
   MaxMana: 10
@@ -3679,6 +3726,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 508572852}
   - {fileID: 422159200}
   - {fileID: 399491745}
   m_Father: {fileID: 0}

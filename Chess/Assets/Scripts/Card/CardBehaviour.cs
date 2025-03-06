@@ -11,6 +11,7 @@ public class CardBehaviour : MonoBehaviour
     private Vector3 offset;
     public PawnDestroyer pawnDestroyer;
     public HealthAdder addHealth;
+    public ManaSurge manaSurge;
     private Transform currentSlot; // The slot the card started in
     private bool isWhitePlayerCard; // Whether this card belongs to the white player
     public string cardName;// Name of the card
@@ -29,6 +30,10 @@ public class CardBehaviour : MonoBehaviour
         if (addHealth == null)
         {
             addHealth = FindFirstObjectByType<HealthAdder>(); // Try to find it if not assigned
+        }
+        if(manaSurge == null)
+        {
+            manaSurge = FindFirstObjectByType<ManaSurge>();
         }
 
         // Find the card's original slot by checking DeckManager's dictionaries
@@ -74,7 +79,8 @@ public class CardBehaviour : MonoBehaviour
                 break;
 
             case "Card 6":
-                Debug.Log("Card6: No special ability.");
+                manaSurge.Activate();
+                Debug.Log("Card6: Mana Surge.");
                 break;
 
             case "Card 7":
