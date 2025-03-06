@@ -14,6 +14,7 @@ public class CardBehaviour : MonoBehaviour
     private Transform currentSlot; // The slot the card started in
     private bool isWhitePlayerCard; // Whether this card belongs to the white player
     public string cardName;// Name of the card
+    public int cardCost;//Mana cost
     [SerializeField] private GameObject playZone; // Assign the special play zone in Inspector
 
     void Start()
@@ -147,7 +148,8 @@ public class CardBehaviour : MonoBehaviour
 
         isDragging = false;
 
-        if (IsInPlayZone())
+        GameController gameController = FindFirstObjectByType<GameController>();
+        if (IsInPlayZone() && gameController.SpendMana(cardCost))
         {
             // Execute the special action when played
             ExecuteAbility(cardName);
