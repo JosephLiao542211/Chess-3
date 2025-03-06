@@ -13,6 +13,7 @@ public class DeckManager : MonoBehaviour
     public int maxDraw = 4;
     public GameObject cardPrefab;
     private GameController gameController;
+    private int[] cardCosts = {1, 2, 3, 4, 5, 6, 7};
 
     // Separate dictionaries for white and black player slots
     public Dictionary<Transform, GameObject> whiteSlotCards = new Dictionary<Transform, GameObject>();
@@ -92,7 +93,7 @@ public class DeckManager : MonoBehaviour
             CardData card = new CardData();
             card.cardName = "Card " + (i + 1);
             card.cardSprite = Resources.Load<Sprite>("CardSprites/Card" + (i + 1)); // Ensure sprites are in "Resources/CardSprites/"
-            card.cardCost = 1;//Replace with a list of ints holding the card costs
+            card.cardCost = cardCosts[i];
             newDeck.Add(card);
         }
         return newDeck;
