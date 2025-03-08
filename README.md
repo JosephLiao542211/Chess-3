@@ -3,6 +3,8 @@
 ## Overview
 Chess 3 is an advanced chess game that introduces new mechanics and enhanced gameplay features. Built using Unity, this project offers a unique experience beyond traditional chess, incorporating new rules, custom piece movements, and dynamic board interactions.
 
+![image](https://github.com/user-attachments/assets/0b949da3-9ae0-4e2d-a7d9-cc964e7c652e)
+
 ## Features
 - **Custom Chess Pieces**: Unique pieces with special movement rules.
 - **Dynamic Board Mechanics**: New tile-based interactions and modifications.
