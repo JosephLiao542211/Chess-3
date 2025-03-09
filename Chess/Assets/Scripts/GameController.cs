@@ -23,6 +23,9 @@ public class GameController : MonoBehaviour
     public Camera mainCamera;
     public Button endTurnWhite;
     public Button endTurnBlack;
+    public delegate void TurnEndHandler();
+    public event TurnEndHandler OnTurnEnd;
+  
 
     public TextMeshProUGUI WhiteManaText;
     public TextMeshProUGUI BlackManaText;
@@ -114,7 +117,7 @@ public class GameController : MonoBehaviour
         UpdateManaUI();
         return true;
     }
-
+    
     public void EndTurn()
     {
         bool kingIsInCheck = false;
@@ -208,7 +211,7 @@ public class GameController : MonoBehaviour
             }
         }
 
-        
+        OnTurnEnd?.Invoke();
     }
 
     bool HasValidMoves(GameObject piece)

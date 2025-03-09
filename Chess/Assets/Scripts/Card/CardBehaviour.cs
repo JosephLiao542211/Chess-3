@@ -10,6 +10,7 @@ public class CardBehaviour : MonoBehaviour
     private bool isDragging = false;
     private Vector3 offset;
     public PawnDestroyer pawnDestroyer;
+    public DeathTileCard deathTileCard;
     public HealthAdder addHealth;
     private Transform currentSlot; // The slot the card started in
     private bool isWhitePlayerCard; // Whether this card belongs to the white player
@@ -30,6 +31,10 @@ public class CardBehaviour : MonoBehaviour
         if (addHealth == null)
         {
             addHealth = FindFirstObjectByType<HealthAdder>(); // Try to find it if not assigned
+        }
+        if (deathTileCard == null)
+        {
+            deathTileCard = FindFirstObjectByType<DeathTileCard>();
         }
 
         // Find the card's original slot by checking DeckManager's dictionaries
@@ -67,7 +72,8 @@ public class CardBehaviour : MonoBehaviour
                 break;
 
             case "Card 4":
-                Debug.Log("Card4: No special ability.");
+                deathTileCard.Activate();
+                Debug.Log("Card4: Playing Deathtile.");
                 break;
 
             case "Card 5":

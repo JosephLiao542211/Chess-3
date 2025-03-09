@@ -8,6 +8,7 @@ TagManager:
   - Black
   - Board
   - PlayZone
+  - Tile
   layers:
   - Default
   - TransparentFX

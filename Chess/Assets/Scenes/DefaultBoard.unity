@@ -749,7 +749,7 @@ GameObject:
   - component: {fileID: 115099495}
   m_Layer: 0
   m_Name: Board
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3545,6 +3545,8 @@ MonoBehaviour:
   MaxMana: 10
   deckManager: {fileID: 579451780}
   mainCamera: {fileID: 1343649308}
+  endTurnWhite: {fileID: 0}
+  endTurnBlack: {fileID: 0}
   WhiteManaText: {fileID: 1891987774}
   BlackManaText: {fileID: 471433461}
 --- !u!4 &541102416
@@ -5973,12 +5975,12 @@ PrefabInstance:
     - target: {fileID: 6712566765300022561, guid: e80df291c97fbd74699ce789a5c54ee9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.43
+      value: 7.11
       objectReference: {fileID: 0}
     - target: {fileID: 6712566765300022561, guid: e80df291c97fbd74699ce789a5c54ee9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.28
+      value: 0.42
       objectReference: {fileID: 0}
     - target: {fileID: 6712566765300022561, guid: e80df291c97fbd74699ce789a5c54ee9,
         type: 3}
