@@ -130,7 +130,7 @@ public class PieceController : MonoBehaviour
                     enemyPiece.LoseLife();
                     // Switch turns after the attack
                     GameController.DeselectPiece();
-                    GameController.EndTurn();
+                    //GameController.EndTurn();
                     return false; // Stop the move
                 }
                 else
@@ -482,6 +482,7 @@ public class PieceController : MonoBehaviour
                 if (GameController.SelectedPiece != null)
                 {
                     GameController.DeselectPiece();
+                    GameController.movesRemaining -=1;
                     //GameController.EndTurn();
                 }
             }
@@ -501,7 +502,9 @@ public class PieceController : MonoBehaviour
                 if (GameController.SelectedPiece != null)
                 {
                     GameController.DeselectPiece();
-                    GameController.EndTurn();
+                    //MAYEBE END TURN TBD
+                    GameController.movesRemaining -= 1;
+                    //GameController.EndTurn();
                 }
             }
         }

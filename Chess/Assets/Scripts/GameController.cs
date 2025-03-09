@@ -5,6 +5,8 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Diagnostics;
+using Debug = UnityEngine.Debug;
 
 public class GameController : MonoBehaviour
 {
@@ -23,9 +25,18 @@ public class GameController : MonoBehaviour
     public Camera mainCamera;
     public Button endTurnWhite;
     public Button endTurnBlack;
+    public Button endPhaseButton;    // Single button for ending the phase
 
     public TextMeshProUGUI WhiteManaText;
     public TextMeshProUGUI BlackManaText;
+    public TextMeshProUGUI PhaseText;
+    
+
+    // Phase management
+    public enum GamePhase { CardPhase, MovePhase }
+    public GamePhase currentPhase = GamePhase.CardPhase;
+    public int maxMovesPerTurn = 1; // Variable to control max moves per turn
+    public int movesRemaining = 0;
 
     // Use this for initialization
     void Start()
@@ -36,26 +47,60 @@ public class GameController : MonoBehaviour
         blackMana = 1;
         whiteManaSpent = 0;
         blackManaSpent = 0;
+        movesRemaining = maxMovesPerTurn;
         UpdateManaUI();
+        UpdatePhaseUI();
         //Buttons
         endTurnWhite.onClick.AddListener(() => ButtonEndTurn(true));
         endTurnBlack.onClick.AddListener(() => ButtonEndTurn(false));
+        endPhaseButton.onClick.AddListener(EndCardPhase);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    void ButtonEndTurn(bool White){
-        if ((White && WhiteTurn) || (!White && !WhiteTurn)){
+    void ButtonEndTurn(bool White)
+    {
+        if ((White && WhiteTurn) || (!White && !WhiteTurn))
+        {
             EndTurn();
         }
     }
 
+    void EndCardPhase()
+    {
+        // Only allow ending card phase for the current player's turn
+        if (currentPhase == GamePhase.CardPhase)
+        {
+            SwitchToMovePhase();
+        }
+    }
+
+    void SwitchToMovePhase()
+    {
+        currentPhase = GamePhase.MovePhase;
+        movesRemaining = maxMovesPerTurn;
+        UpdatePhaseUI();
+    }
+
     public void SelectPiece(GameObject piece)
     {
+        // Only allow piece selection during Move Phase
+        if (currentPhase != GamePhase.MovePhase)
+        {
+            Debug.Log("Cannot select pieces during Card Phase");
+            return;
+        }
+
+        if (movesRemaining <= 0)
+        {
+            Debug.Log("No moves remaining");
+            return;
+        }
+
         if (piece.tag == "White" && WhiteTurn == true || piece.tag == "Black" && WhiteTurn == false)
         {
             DeselectPiece();
@@ -87,27 +132,48 @@ public class GameController : MonoBehaviour
         }
     }
 
+    // Call this method when a move is successfully completed
+    public void MoveMade()
+    {
+        if (currentPhase == GamePhase.MovePhase)
+        {
+            movesRemaining--;
+            UpdatePhaseUI();
+
+            if (movesRemaining <= 0)
+            {
+                EndTurn();
+            }
+        }
+    }
+
     public bool SpendMana(int cost = 1)
-    {   
-        if (WhiteTurn){
-            if (cost == -1) {
-                cost = (int)Floor((decimal)whiteMana/2);
+    {
+        if (WhiteTurn)
+        {
+            if (cost == -1)
+            {
+                cost = (int)Floor((decimal)whiteMana / 2);
             }
 
-            if ((whiteMana - whiteManaSpent - cost) < 0){
+            if ((whiteMana - whiteManaSpent - cost) < 0)
+            {
                 return false;
             }
             whiteManaSpent += cost;
         }
-        else if (!WhiteTurn){
-            if (cost == -1) {
-                cost = (int)Floor((decimal)blackMana/2);
+        else if (!WhiteTurn)
+        {
+            if (cost == -1)
+            {
+                cost = (int)Floor((decimal)blackMana / 2);
             }
 
-            if ((blackMana - blackManaSpent - cost) < 0){
+            if ((blackMana - blackManaSpent - cost) < 0)
+            {
                 return false;
             }
-        
+
             blackManaSpent += cost;
         }
 
@@ -119,7 +185,6 @@ public class GameController : MonoBehaviour
     {
         bool kingIsInCheck = false;
         bool hasValidMoves = false;
-        
 
         //Update mana values
         if (!WhiteTurn)
@@ -139,12 +204,16 @@ public class GameController : MonoBehaviour
         UpdateManaUI();
 
         WhiteTurn = !WhiteTurn;
-        
+
+        // Reset to Card Phase at the start of each turn
+        currentPhase = GamePhase.CardPhase;
+        UpdatePhaseUI();
+
         deckManager.maxDraw = 4;
         // AL Edit: Added the logic to turn the board 
         // Rotate the camera 180 degrees to have the current player at the bottom
         mainCamera.transform.Rotate(0, 0, 180);
-        
+
         // Rotate each piece to keep them facing the right way
         foreach (Transform piece in WhitePieces.transform)
         {
@@ -154,7 +223,7 @@ public class GameController : MonoBehaviour
         {
             piece.Rotate(0, 0, 180);
         }
-        
+
         if (WhiteTurn)
         {
             deckManager.maxDraw = deckManager.CountAvailableSlots(deckManager.whiteSlotCards);
@@ -207,8 +276,6 @@ public class GameController : MonoBehaviour
                 Checkmate();
             }
         }
-
-        
     }
 
     bool HasValidMoves(GameObject piece)
@@ -240,6 +307,24 @@ public class GameController : MonoBehaviour
     void UpdateManaUI()
     {
         WhiteManaText.text = "White Mana: " + (whiteMana - whiteManaSpent);
-        BlackManaText.text = "Black Mana " + (blackMana - blackManaSpent);
+        BlackManaText.text = "Black Mana: " + (blackMana - blackManaSpent);
+    }
+
+    void UpdatePhaseUI()
+    {
+        string phaseString = currentPhase == GamePhase.CardPhase ? "Card Phase" : "Move Phase";
+        PhaseText.text = "Current Phase: " + phaseString;
+
+        if (currentPhase == GamePhase.MovePhase)
+        {
+            //MovesRemainingText.text = "Moves Remaining: " + movesRemaining;
+            // You might want to disable the phase end button during Move Phase
+            endPhaseButton.interactable = false;
+        }
+        else
+        {
+            //MovesRemainingText.text = "";
+            endPhaseButton.interactable = true;
+        }
     }
 }
