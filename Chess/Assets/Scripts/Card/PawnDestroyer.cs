@@ -29,7 +29,6 @@ public class PawnDestroyer : MonoBehaviour
                     Destroy(selectedPiece);
                     Debug.Log("Pawn Destroyer used! Removed " + selectedPiece.name);
 
-                    // ✅ Instead of destroying the script, reset it so it can be used again
                     isActive = false;
                 }
                 else

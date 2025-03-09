@@ -21,6 +21,7 @@ public class PieceController : MonoBehaviour
     [HideInInspector]
     public bool DoubleStep = false;
     [HideInInspector]
+    public bool DoubleMoveEnabled = false; // New field for double move enhancement
     public bool MovingY = false;
     [HideInInspector]
     public bool MovingX = false;
@@ -285,11 +286,14 @@ public class PieceController : MonoBehaviour
             }
         }
 
+
         if (this.name.Contains("Pawn"))
         {
-            // If the new position is on the rank above (White) or below (Black)
+            Debug.Log($"Validating movement for {this.name}. DoubleMoveEnabled={this.DoubleMoveEnabled}, moved={this.moved}");
+
+            // Normal pawn movement (1 square forward)
             if ((this.tag == "White" && oldPosition.y + 1 == newPosition.y) ||
-               (this.tag == "Black" && oldPosition.y - 1 == newPosition.y))
+                (this.tag == "Black" && oldPosition.y - 1 == newPosition.y))
             {
                 GameObject otherPiece = GetPieceOnPosition(newPosition.x, newPosition.y);
 
@@ -325,22 +329,31 @@ public class PieceController : MonoBehaviour
 
                 encounteredEnemy = otherPiece;
             }
-            // Double-step
+            // Double-step (initial double move for pawns)
             else if ((this.tag == "White" && oldPosition.x == newPosition.x && oldPosition.y + 2 == newPosition.y) ||
-                     (this.tag == "Black" && oldPosition.x == newPosition.x && oldPosition.y - 2 == newPosition.y))
+                    (this.tag == "Black" && oldPosition.x == newPosition.x && oldPosition.y - 2 == newPosition.y))
             {
-                if (this.moved == false && GetPieceOnPosition(newPosition.x, newPosition.y) == null)
+                Debug.Log($"Checking double move for {this.name}. DoubleMoveEnabled={this.DoubleMoveEnabled}, moved={this.moved}");
+
+                //AL EDIT: Allow double move if DoubleMoveEnabled is true OR if it's the pawn's first move
+                if ((this.DoubleMoveEnabled || this.moved == false) && GetPieceOnPosition(newPosition.x, newPosition.y) == null)
                 {
+                    Debug.Log($"{this.name} can move two squares!");
                     if (excludeCheck == true || (excludeCheck == false && IsInCheck(newPosition) == false))
                     {
                         isValid = true;
                     }
+                }
+                else
+                {
+                    Debug.Log($"{this.name} double move failed! Conditions not met.");
                 }
             }
         }
 
         return isValid;
     }
+        
 
     /// <summary>
     /// 

@@ -65,6 +65,23 @@ public class GameController : MonoBehaviour
             SelectedPiece = null;
         }
     }
+    
+    public void ActivatePawnDoubleMove(GameObject pawn)
+    {
+        if (pawn != null && pawn.name.Contains("Pawn"))
+        {
+            PieceController pawnController = pawn.GetComponent<PieceController>();
+            if (pawnController != null)
+            {
+                pawnController.DoubleMoveEnabled = true;
+                Debug.Log($"PawnDoubleMove card activated! {pawn.name} can now move double the distance.");
+            }
+        }
+        else
+        {
+            Debug.Log("Invalid selection. Please select a pawn to enhance.");
+        }
+    }
 
     public void SpendMana(int cost = 1)
     {
@@ -124,8 +141,17 @@ public class GameController : MonoBehaviour
 
                 if (piece.name.Contains("Pawn"))
                 {
-                    piece.GetComponent<PieceController>().DoubleStep = false;
+                    PieceController pawn = piece.GetComponent<PieceController>();
+                    if (WhiteTurn && piece.tag == "Black") // Reset only black pawns when white's turn starts
+                    {
+                        pawn.DoubleStep = false;
+                    }
+                    else if (!WhiteTurn && piece.tag == "White") // Reset only white pawns when black's turn starts
+                    {
+                        pawn.DoubleStep = false;
+                    }
                 }
+
                 else if (piece.name.Contains("King"))
                 {
                     kingIsInCheck = piece.GetComponent<PieceController>().IsInCheck(piece.position);
@@ -144,7 +170,15 @@ public class GameController : MonoBehaviour
 
                 if (piece.name.Contains("Pawn"))
                 {
-                    piece.GetComponent<PieceController>().DoubleStep = false;
+                    PieceController pawn = piece.GetComponent<PieceController>();
+                    if (WhiteTurn && piece.tag == "Black") // Reset only black pawns when white's turn starts
+                    {
+                        pawn.DoubleStep = false;
+                    }
+                    else if (!WhiteTurn && piece.tag == "White") // Reset only white pawns when black's turn starts
+                    {
+                        pawn.DoubleStep = false;
+                    }
                 }
                 else if (piece.name.Contains("King"))
                 {

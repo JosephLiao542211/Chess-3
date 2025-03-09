@@ -11,6 +11,7 @@ public class CardBehaviour : MonoBehaviour
     private Vector3 offset;
     public PawnDestroyer pawnDestroyer;
     public HealthAdder addHealth;
+    public PawnDoubleMove pawnDoubleMove;
     private Transform currentSlot; // The slot the card started in
     private bool isWhitePlayerCard; // Whether this card belongs to the white player
     public string cardName;// Name of the card
@@ -29,6 +30,10 @@ public class CardBehaviour : MonoBehaviour
         if (addHealth == null)
         {
             addHealth = FindFirstObjectByType<HealthAdder>(); // Try to find it if not assigned
+        }
+        if (pawnDoubleMove == null)
+        {
+            pawnDoubleMove = FindFirstObjectByType<PawnDoubleMove>();
         }
 
         // Find the card's original slot by checking DeckManager's dictionaries
@@ -61,8 +66,8 @@ public class CardBehaviour : MonoBehaviour
                 break;
 
             case "Card 3":
-                Debug.Log("Card3: Changing turn.");
-          
+                pawnDoubleMove.Activate();
+                Debug.Log("Card3: Select a Pawn to have double the movement");
                 break;
 
             case "Card 4":
