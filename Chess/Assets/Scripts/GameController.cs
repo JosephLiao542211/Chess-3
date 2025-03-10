@@ -14,6 +14,7 @@ public class GameController : MonoBehaviour
     public GameObject WhitePieces;
     public GameObject BlackPieces;
     public int TurnCount = 1;
+    public int initMana;
     public int whiteMana;
     public int blackMana;
     public int whiteManaSpent;
@@ -43,8 +44,8 @@ public class GameController : MonoBehaviour
     {
         mainCamera = Camera.main; // Find the main camera
         //Set initial mana values
-        whiteMana = 1;
-        blackMana = 1;
+        whiteMana = initMana;
+        blackMana = initMana;
         whiteManaSpent = 0;
         blackManaSpent = 0;
         movesRemaining = maxMovesPerTurn;
@@ -62,6 +63,57 @@ public class GameController : MonoBehaviour
 
     }
 
+    public void UpdatePieceColors()
+    {
+        // Check all white pieces
+        foreach (Transform piece in WhitePieces.transform)
+        {
+            PieceController pieceController = piece.GetComponent<PieceController>();
+            if (pieceController != null)
+            {
+                // If piece has more than 1 life, color it green
+                if (pieceController.numLives > 1)
+                {
+                    piece.GetComponent<SpriteRenderer>().color = Color.green;
+                }
+                // If it's selected, keep it yellow
+                else if (SelectedPiece == piece.gameObject)
+                {
+                    piece.GetComponent<SpriteRenderer>().color = Color.yellow;
+                }
+                // Otherwise, normal color
+                else
+                {
+                    piece.GetComponent<SpriteRenderer>().color = Color.white;
+                }
+            }
+        }
+
+        // Check all black pieces
+        foreach (Transform piece in BlackPieces.transform)
+        {
+            PieceController pieceController = piece.GetComponent<PieceController>();
+            if (pieceController != null)
+            {
+                // If piece has more than 1 life, color it green
+                if (pieceController.numLives > 1)
+                {
+                    piece.GetComponent<SpriteRenderer>().color = Color.green;
+                }
+                // If it's selected, keep it yellow
+                else if (SelectedPiece == piece.gameObject)
+                {
+                    piece.GetComponent<SpriteRenderer>().color = Color.yellow;
+                }
+                // Otherwise, normal color
+                else
+                {
+                    piece.GetComponent<SpriteRenderer>().color = Color.white;
+                }
+            }
+        }
+    }
+
     void ButtonEndTurn(bool White)
     {
         if ((White && WhiteTurn) || (!White && !WhiteTurn))
@@ -72,6 +124,7 @@ public class GameController : MonoBehaviour
 
     void EndCardPhase()
     {
+
         // Only allow ending card phase for the current player's turn
         if (currentPhase == GamePhase.CardPhase)
         {
@@ -81,6 +134,7 @@ public class GameController : MonoBehaviour
 
     void SwitchToMovePhase()
     {
+        
         currentPhase = GamePhase.MovePhase;
         movesRemaining = maxMovesPerTurn;
         UpdatePhaseUI();
@@ -118,6 +172,7 @@ public class GameController : MonoBehaviour
 
     public void DeselectPiece()
     {
+        UpdatePieceColors();
         if (SelectedPiece != null)
         {
             // Remove highlight
@@ -152,6 +207,7 @@ public class GameController : MonoBehaviour
     // Call this method when a move is successfully completed
     public void MoveMade()
     {
+        UpdatePieceColors();
         if (currentPhase == GamePhase.MovePhase)
         {
             movesRemaining--;
@@ -200,6 +256,7 @@ public class GameController : MonoBehaviour
 
     public void EndTurn()
     {
+        UpdatePieceColors();
         bool kingIsInCheck = false;
         bool hasValidMoves = false;
 
@@ -207,13 +264,13 @@ public class GameController : MonoBehaviour
         if (!WhiteTurn)
         {
             TurnCount++;
-            whiteMana = Min(TurnCount, MaxMana);
+            whiteMana = Min(TurnCount+initMana, MaxMana);
             whiteManaSpent = 0;
             Debug.Log(whiteMana);
         }
         else
         {
-            blackMana = Min(TurnCount, MaxMana);
+            blackMana = Min(TurnCount+initMana, MaxMana);
             blackManaSpent = 0;
             Debug.Log(blackMana);
         }

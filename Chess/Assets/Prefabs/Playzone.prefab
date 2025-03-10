@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 350754091807974996}
   - component: {fileID: 2456827355195950711}
   - component: {fileID: 128020359188205500}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Playzone
   m_TagString: PlayZone
   m_Icon: {fileID: 0}
