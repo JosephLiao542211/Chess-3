@@ -79,12 +79,16 @@ public class DeathTileCard : MonoBehaviour
             Debug.Log($"Checking if {piece.name} stepped on the Death Tile at {deathTile.name}");
             Debug.Log($"Piece position: {piece.transform.position}, Death Tile position: {deathTile.transform.position}");
 
-            float distance = Vector3.Distance(piece.transform.position, deathTile.transform.position);
-            float tolerance = 0.1f; // Adjust this value as needed
+            // Adjust the piece's position to align with the tile's position
+            Vector3 adjustedPiecePosition = new Vector3(
+                piece.transform.position.x,
+                piece.transform.position.y,
+                deathTile.transform.position.z // Use the tile's Z-coordinate
+            );
 
-            Debug.Log($"Distance between piece and death tile: {distance}");
-
-            if (distance <= tolerance)
+            // Compare the adjusted piece position with the death tile's position
+            if (adjustedPiecePosition.x == deathTile.transform.position.x &&
+                adjustedPiecePosition.y == deathTile.transform.position.y)
             {
                 Debug.Log($"{piece.name} stepped on the Death Tile at {deathTile.name}");
                 PieceController pieceController = piece.GetComponent<PieceController>();
@@ -99,7 +103,7 @@ public class DeathTileCard : MonoBehaviour
             }
             else
             {
-                Debug.Log($"{piece.name} did not step on the Death Tile. Distance: {distance}");
+                Debug.Log($"{piece.name} did not step on the Death Tile.");
             }
         }
         else
