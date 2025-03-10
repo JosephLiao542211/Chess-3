@@ -12,6 +12,7 @@ public class CardBehaviour : MonoBehaviour
     public PawnDestroyer pawnDestroyer;
     public HealthAdder addHealth;
     public PawnDoubleMove pawnDoubleMove;
+    public StackPawn stackPawn;
     private Transform currentSlot; // The slot the card started in
     private bool isWhitePlayerCard; // Whether this card belongs to the white player
     public string cardName;// Name of the card
@@ -35,6 +36,11 @@ public class CardBehaviour : MonoBehaviour
         {
             pawnDoubleMove = FindFirstObjectByType<PawnDoubleMove>();
         }
+        if (stackPawn == null)
+        {
+            stackPawn = FindFirstObjectByType<StackPawn>();
+        }
+        
 
         // Find the card's original slot by checking DeckManager's dictionaries
         FindOriginalSlot();
@@ -75,7 +81,8 @@ public class CardBehaviour : MonoBehaviour
                 break;
 
             case "Card 5":
-                Debug.Log("Card5: No special ability.");
+                stackPawn.Activate();
+                Debug.Log("Card5: Select two adjacent pawns to merge ");
                 break;
 
             case "Card 6":

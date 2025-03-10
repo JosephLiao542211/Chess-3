@@ -527,6 +527,8 @@ MonoBehaviour:
   HighestRankY: 3.5
   LowestRankY: -3.5
   DoubleStep: 0
+  DoubleMoveEnabled: 0
+  CanMoveDiagonally: 0
   MovingY: 0
   MovingX: 0
 --- !u!1001 &106850725
@@ -957,6 +959,8 @@ MonoBehaviour:
   HighestRankY: 3.5
   LowestRankY: -3.5
   DoubleStep: 0
+  DoubleMoveEnabled: 0
+  CanMoveDiagonally: 0
   MovingY: 0
   MovingX: 0
 --- !u!212 &145217669
@@ -1216,6 +1220,8 @@ MonoBehaviour:
   HighestRankY: 3.5
   LowestRankY: -3.5
   DoubleStep: 0
+  DoubleMoveEnabled: 0
+  CanMoveDiagonally: 0
   MovingY: 0
   MovingX: 0
 --- !u!1001 &154397467
@@ -1437,6 +1443,8 @@ MonoBehaviour:
   HighestRankY: 3.5
   LowestRankY: -3.5
   DoubleStep: 0
+  DoubleMoveEnabled: 0
+  CanMoveDiagonally: 0
   MovingY: 0
   MovingX: 0
 --- !u!1001 &222726065
@@ -1658,6 +1666,8 @@ MonoBehaviour:
   HighestRankY: 3.5
   LowestRankY: -3.5
   DoubleStep: 0
+  DoubleMoveEnabled: 0
+  CanMoveDiagonally: 0
   MovingY: 0
   MovingX: 0
 --- !u!1001 &275966813
@@ -2449,6 +2459,8 @@ MonoBehaviour:
   HighestRankY: 3.5
   LowestRankY: -3.5
   DoubleStep: 0
+  DoubleMoveEnabled: 0
+  CanMoveDiagonally: 0
   MovingY: 0
   MovingX: 0
 --- !u!1001 &476870842
@@ -2670,6 +2682,8 @@ MonoBehaviour:
   HighestRankY: 3.5
   LowestRankY: -3.5
   DoubleStep: 0
+  DoubleMoveEnabled: 0
+  CanMoveDiagonally: 0
   MovingY: 0
   MovingX: 0
 --- !u!1 &499088865
@@ -2828,6 +2842,8 @@ MonoBehaviour:
   HighestRankY: 3.5
   LowestRankY: -3.5
   DoubleStep: 0
+  DoubleMoveEnabled: 0
+  CanMoveDiagonally: 0
   MovingY: 0
   MovingX: 0
 --- !u!1001 &500061949
@@ -3395,6 +3411,8 @@ MonoBehaviour:
   HighestRankY: 3.5
   LowestRankY: -3.5
   DoubleStep: 0
+  DoubleMoveEnabled: 0
+  CanMoveDiagonally: 0
   MovingY: 0
   MovingX: 0
 --- !u!114 &579451780 stripped
@@ -3440,6 +3458,7 @@ Transform:
   m_Children:
   - {fileID: 422159200}
   - {fileID: 399491745}
+  - {fileID: 1193180449}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &612869358
@@ -3881,6 +3900,8 @@ MonoBehaviour:
   HighestRankY: 3.5
   LowestRankY: -3.5
   DoubleStep: 0
+  DoubleMoveEnabled: 0
+  CanMoveDiagonally: 0
   MovingY: 0
   MovingX: 0
 --- !u!1001 &735523556
@@ -4165,6 +4186,8 @@ MonoBehaviour:
   HighestRankY: 3.5
   LowestRankY: -3.5
   DoubleStep: 0
+  DoubleMoveEnabled: 0
+  CanMoveDiagonally: 0
   MovingY: 0
   MovingX: 0
 --- !u!1001 &747287248
@@ -4386,6 +4409,8 @@ MonoBehaviour:
   HighestRankY: 3.5
   LowestRankY: -3.5
   DoubleStep: 0
+  DoubleMoveEnabled: 0
+  CanMoveDiagonally: 0
   MovingY: 0
   MovingX: 0
 --- !u!1001 &807262859
@@ -4670,6 +4695,8 @@ MonoBehaviour:
   HighestRankY: 3.5
   LowestRankY: -3.5
   DoubleStep: 0
+  DoubleMoveEnabled: 0
+  CanMoveDiagonally: 0
   MovingY: 0
   MovingX: 0
 --- !u!1 &889189389
@@ -4828,6 +4855,8 @@ MonoBehaviour:
   HighestRankY: 3.5
   LowestRankY: -3.5
   DoubleStep: 0
+  DoubleMoveEnabled: 0
+  CanMoveDiagonally: 0
   MovingY: 0
   MovingX: 0
 --- !u!1001 &901348094
@@ -5049,6 +5078,8 @@ MonoBehaviour:
   HighestRankY: 3.5
   LowestRankY: -3.5
   DoubleStep: 0
+  DoubleMoveEnabled: 0
+  CanMoveDiagonally: 0
   MovingY: 0
   MovingX: 0
 --- !u!1001 &911601874
@@ -5528,6 +5559,50 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1146808320}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1193180448
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1193180449}
+  - component: {fileID: 1193180450}
+  m_Layer: 0
+  m_Name: StackPawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1193180449
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193180448}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 587116196}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1193180450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193180448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37aa42bb5c6224738bbd133cb9655373, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1236399989
 GameObject:
   m_ObjectHideFlags: 0
@@ -5684,6 +5759,8 @@ MonoBehaviour:
   HighestRankY: 3.5
   LowestRankY: -3.5
   DoubleStep: 0
+  DoubleMoveEnabled: 0
+  CanMoveDiagonally: 0
   MovingY: 0
   MovingX: 0
 --- !u!1 &1272975301
@@ -5842,6 +5919,8 @@ MonoBehaviour:
   HighestRankY: 3.5
   LowestRankY: -3.5
   DoubleStep: 0
+  DoubleMoveEnabled: 0
+  CanMoveDiagonally: 0
   MovingY: 0
   MovingX: 0
 --- !u!1001 &1287207563
@@ -6126,6 +6205,8 @@ MonoBehaviour:
   HighestRankY: 3.5
   LowestRankY: -3.5
   DoubleStep: 0
+  DoubleMoveEnabled: 0
+  CanMoveDiagonally: 0
   MovingY: 0
   MovingX: 0
 --- !u!1 &1295943666
@@ -6284,6 +6365,8 @@ MonoBehaviour:
   HighestRankY: 3.5
   LowestRankY: -3.5
   DoubleStep: 0
+  DoubleMoveEnabled: 0
+  CanMoveDiagonally: 0
   MovingY: 0
   MovingX: 0
 --- !u!1 &1335456322
@@ -6442,6 +6525,8 @@ MonoBehaviour:
   HighestRankY: 3.5
   LowestRankY: -3.5
   DoubleStep: 0
+  DoubleMoveEnabled: 0
+  CanMoveDiagonally: 0
   MovingY: 0
   MovingX: 0
 --- !u!1001 &1336212465
@@ -6764,6 +6849,8 @@ MonoBehaviour:
   HighestRankY: 3.5
   LowestRankY: -3.5
   DoubleStep: 0
+  DoubleMoveEnabled: 0
+  CanMoveDiagonally: 0
   MovingY: 0
   MovingX: 0
 --- !u!1001 &1430768696
@@ -7048,6 +7135,8 @@ MonoBehaviour:
   HighestRankY: 3.5
   LowestRankY: -3.5
   DoubleStep: 0
+  DoubleMoveEnabled: 0
+  CanMoveDiagonally: 0
   MovingY: 0
   MovingX: 0
 --- !u!1 &1456284005
@@ -7206,6 +7295,8 @@ MonoBehaviour:
   HighestRankY: 3.5
   LowestRankY: -3.5
   DoubleStep: 0
+  DoubleMoveEnabled: 0
+  CanMoveDiagonally: 0
   MovingY: 0
   MovingX: 0
 --- !u!1 &1484889930
@@ -7364,6 +7455,8 @@ MonoBehaviour:
   HighestRankY: 3.5
   LowestRankY: -3.5
   DoubleStep: 0
+  DoubleMoveEnabled: 0
+  CanMoveDiagonally: 0
   MovingY: 0
   MovingX: 0
 --- !u!1001 &1523778798
@@ -7711,6 +7804,8 @@ MonoBehaviour:
   HighestRankY: 3.5
   LowestRankY: -3.5
   DoubleStep: 0
+  DoubleMoveEnabled: 0
+  CanMoveDiagonally: 0
   MovingY: 0
   MovingX: 0
 --- !u!1001 &1570292053
@@ -7932,6 +8027,8 @@ MonoBehaviour:
   HighestRankY: 3.5
   LowestRankY: -3.5
   DoubleStep: 0
+  DoubleMoveEnabled: 0
+  CanMoveDiagonally: 0
   MovingY: 0
   MovingX: 0
 --- !u!1 &1593952939
@@ -8090,6 +8187,8 @@ MonoBehaviour:
   HighestRankY: 3.5
   LowestRankY: -3.5
   DoubleStep: 0
+  DoubleMoveEnabled: 0
+  CanMoveDiagonally: 0
   MovingY: 0
   MovingX: 0
 --- !u!1 &1606976538
@@ -8248,6 +8347,8 @@ MonoBehaviour:
   HighestRankY: 3.5
   LowestRankY: -3.5
   DoubleStep: 0
+  DoubleMoveEnabled: 0
+  CanMoveDiagonally: 0
   MovingY: 0
   MovingX: 0
 --- !u!1001 &1607669958
@@ -8579,6 +8680,8 @@ MonoBehaviour:
   HighestRankY: 3.5
   LowestRankY: -3.5
   DoubleStep: 0
+  DoubleMoveEnabled: 0
+  CanMoveDiagonally: 0
   MovingY: 0
   MovingX: 0
 --- !u!1001 &1631193128
@@ -8800,6 +8903,8 @@ MonoBehaviour:
   HighestRankY: 3.5
   LowestRankY: -3.5
   DoubleStep: 0
+  DoubleMoveEnabled: 0
+  CanMoveDiagonally: 0
   MovingY: 0
   MovingX: 0
 --- !u!1001 &1652477010
@@ -9524,6 +9629,8 @@ MonoBehaviour:
   HighestRankY: 3.5
   LowestRankY: -3.5
   DoubleStep: 0
+  DoubleMoveEnabled: 0
+  CanMoveDiagonally: 0
   MovingY: 0
   MovingX: 0
 --- !u!1 &1870407640
@@ -9682,6 +9789,8 @@ MonoBehaviour:
   HighestRankY: 3.5
   LowestRankY: -3.5
   DoubleStep: 0
+  DoubleMoveEnabled: 0
+  CanMoveDiagonally: 0
   MovingY: 0
   MovingX: 0
 --- !u!1001 &1895859251
