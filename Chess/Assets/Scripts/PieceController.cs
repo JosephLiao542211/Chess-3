@@ -32,7 +32,7 @@ public class PieceController : MonoBehaviour
     private Vector3 newPositionX;
 
     private bool moved = false;
-
+    
     // Use this for initialization
     void Start()
     {
@@ -295,7 +295,7 @@ public class PieceController : MonoBehaviour
 
        if (this.name.Contains("Pawn"))
     {
-        Debug.Log($"Validating movement for {this.name}. DoubleMoveEnabled={this.DoubleMoveEnabled}, moved={this.moved}, CanMoveDiagonally={this.CanMoveDiagonally}");
+        //Debug.Log($"Validating movement for {this.name}. DoubleMoveEnabled={this.DoubleMoveEnabled}, moved={this.moved}, CanMoveDiagonally={this.CanMoveDiagonally}");
 
         // Special diagonal movement for merged pawns (only allowed if CanMoveDiagonally is true)
         if (this.CanMoveDiagonally && (oldPosition.x == newPosition.x - 1 || oldPosition.x == newPosition.x + 1))

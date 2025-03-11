@@ -127,9 +127,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 115099495}
     m_Modifications:
+    - target: {fileID: 1032811077064078, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1669732454229982, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
       propertyPath: m_Name
       value: Black Box (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1669732454229982, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4404517788034006, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
       propertyPath: m_RootOrder
@@ -194,6 +202,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: White Box (25)
       objectReference: {fileID: 0}
+    - target: {fileID: 1300549082229702, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1401518396710064, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4314938345094148, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
       propertyPath: m_RootOrder
       value: 53
@@ -253,9 +269,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 115099495}
     m_Modifications:
+    - target: {fileID: 1032811077064078, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1669732454229982, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
       propertyPath: m_Name
       value: Black Box (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1669732454229982, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4404517788034006, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
       propertyPath: m_RootOrder
@@ -320,6 +344,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: White Box (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 1300549082229702, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1401518396710064, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4314938345094148, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
       propertyPath: m_RootOrder
       value: 33
@@ -383,7 +415,7 @@ GameObject:
   - component: {fileID: 92468303}
   - component: {fileID: 92468304}
   - component: {fileID: 92468305}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Black King
   m_TagString: Black
   m_Icon: {fileID: 0}
@@ -543,6 +575,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: White Box (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1300549082229702, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1401518396710064, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4314938345094148, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -602,9 +642,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 115099495}
     m_Modifications:
+    - target: {fileID: 1032811077064078, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1669732454229982, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
       propertyPath: m_Name
       value: Black Box (29)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1669732454229982, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4404517788034006, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
       propertyPath: m_RootOrder
@@ -759,7 +807,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 115099495}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Board
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -857,6 +905,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: White Box (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 1300549082229702, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1401518396710064, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4314938345094148, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
       propertyPath: m_RootOrder
       value: 18
@@ -926,7 +982,7 @@ GameObject:
   - component: {fileID: 145217669}
   - component: {fileID: 145217668}
   - component: {fileID: 145217670}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: White Bishop
   m_TagString: White
   m_Icon: {fileID: 0}
@@ -1086,7 +1142,7 @@ GameObject:
   - component: {fileID: 148106130}
   - component: {fileID: 148106131}
   - component: {fileID: 148106132}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: White Knight (1)
   m_TagString: White
   m_Icon: {fileID: 0}
@@ -1234,107 +1290,6 @@ MonoBehaviour:
   CanMoveDiagonally: 0
   MovingY: 0
   MovingX: 0
---- !u!1 &152576524
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 152576528}
-  - component: {fileID: 152576527}
-  - component: {fileID: 152576526}
-  - component: {fileID: 152576525}
-  m_Layer: 0
-  m_Name: Board Camera
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!81 &152576525
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 152576524}
-  m_Enabled: 1
---- !u!124 &152576526
-Behaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 152576524}
-  m_Enabled: 1
---- !u!20 &152576527
-Camera:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 152576524}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.41176468, g: 0.31554702, b: 0.1937716, a: 0}
-  m_projectionMatrixMode: 1
-  m_GateFitMode: 2
-  m_FOVAxisMode: 0
-  m_Iso: 200
-  m_ShutterSpeed: 0.005
-  m_Aperture: 16
-  m_FocusDistance: 10
-  m_FocalLength: 50
-  m_BladeCount: 5
-  m_Curvature: {x: 2, y: 11}
-  m_BarrelClipping: 0.25
-  m_Anamorphism: 0
-  m_SensorSize: {x: 36, y: 24}
-  m_LensShift: {x: 0, y: 0}
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 26.991467
-  orthographic: 1
-  orthographic size: 8.298656
-  m_Depth: -1
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
---- !u!4 &152576528
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 152576524}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &154397467
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1346,6 +1301,14 @@ PrefabInstance:
     - target: {fileID: 1300549082229702, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
       propertyPath: m_Name
       value: White Box (28)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1300549082229702, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1401518396710064, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4314938345094148, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
       propertyPath: m_RootOrder
@@ -1410,7 +1373,7 @@ GameObject:
   - component: {fileID: 163857009}
   - component: {fileID: 163857010}
   - component: {fileID: 163857011}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Black Pawn (3)
   m_TagString: Black
   m_Icon: {fileID: 0}
@@ -1691,6 +1654,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: White Box (26)
       objectReference: {fileID: 0}
+    - target: {fileID: 1300549082229702, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1401518396710064, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4314938345094148, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
       propertyPath: m_RootOrder
       value: 54
@@ -1754,7 +1725,7 @@ GameObject:
   - component: {fileID: 263175331}
   - component: {fileID: 263175332}
   - component: {fileID: 263175333}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Black Pawn (4)
   m_TagString: Black
   m_Icon: {fileID: 0}
@@ -1914,6 +1885,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: White Box (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 1300549082229702, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1401518396710064, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4314938345094148, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
       propertyPath: m_RootOrder
       value: 32
@@ -1973,9 +1952,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 115099495}
     m_Modifications:
+    - target: {fileID: 1032811077064078, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1669732454229982, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
       propertyPath: m_Name
       value: Black Box (28)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1669732454229982, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4404517788034006, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
       propertyPath: m_RootOrder
@@ -2039,6 +2026,14 @@ PrefabInstance:
     - target: {fileID: 1300549082229702, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
       propertyPath: m_Name
       value: White Box (30)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1300549082229702, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1401518396710064, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4314938345094148, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
       propertyPath: m_RootOrder
@@ -2224,18 +2219,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 355838281}
-  m_LocalRotation: {x: -0, y: -0, z: 0.99999887, w: 0.0015090712}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 974361810}
   m_Father: {fileID: 314350731}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -180.173}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4.9308, y: 3.1455}
-  m_SizeDelta: {x: 1.9939, y: 1.0692}
+  m_AnchoredPosition: {x: 4.9261, y: -1.88}
+  m_SizeDelta: {x: 2.0216, y: 1.18}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &355838283
 MonoBehaviour:
@@ -2327,9 +2322,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 115099495}
     m_Modifications:
+    - target: {fileID: 1032811077064078, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1669732454229982, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
       propertyPath: m_Name
       value: Black Box (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1669732454229982, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4404517788034006, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
       propertyPath: m_RootOrder
@@ -2456,6 +2459,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67d683b1c029c479e8456023ab8a385b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boardCamera: {fileID: 482643491}
 --- !u!4 &422159200
 Transform:
   m_ObjectHideFlags: 0
@@ -2479,9 +2483,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 115099495}
     m_Modifications:
+    - target: {fileID: 1032811077064078, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1669732454229982, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
       propertyPath: m_Name
       value: Black Box (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1669732454229982, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4404517788034006, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
       propertyPath: m_RootOrder
@@ -2590,6 +2602,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: White Box (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 1300549082229702, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1401518396710064, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4314938345094148, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
       propertyPath: m_RootOrder
       value: 17
@@ -2649,9 +2669,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 115099495}
     m_Modifications:
+    - target: {fileID: 1032811077064078, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1669732454229982, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
       propertyPath: m_Name
       value: Black Box (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1669732454229982, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4404517788034006, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
       propertyPath: m_RootOrder
@@ -2714,7 +2742,7 @@ GameObject:
   m_Component:
   - component: {fileID: 450974751}
   - component: {fileID: 450974750}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: White Pieces
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2819,7 +2847,7 @@ GameObject:
   - component: {fileID: 459244706}
   - component: {fileID: 459244707}
   - component: {fileID: 459244708}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: White Pawn (1)
   m_TagString: White
   m_Icon: {fileID: 0}
@@ -2992,13 +3020,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 471433459}
-  m_LocalRotation: {x: -0, y: -0, z: 0.99999166, w: -0.0040956056}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 314350731}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -179.531}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 4.26, y: 2.89}
@@ -3115,6 +3143,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: White Box (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 1300549082229702, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1401518396710064, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4314938345094148, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
       propertyPath: m_RootOrder
       value: 26
@@ -3166,6 +3202,107 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 476870842}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &482643487
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 482643488}
+  - component: {fileID: 482643491}
+  - component: {fileID: 482643490}
+  - component: {fileID: 482643489}
+  m_Layer: 0
+  m_Name: Board Camera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &482643488
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482643487}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!81 &482643489
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482643487}
+  m_Enabled: 0
+--- !u!124 &482643490
+Behaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482643487}
+  m_Enabled: 1
+--- !u!20 &482643491
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482643487}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 3
+  m_BackGroundColor: {r: 0.41176468, g: 0.31554702, b: 0.1937716, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 50
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: -3.84
+  far clip plane: 500
+  field of view: 26.991467
+  orthographic: 1
+  orthographic size: 8.298656
+  m_Depth: 1
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 64
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
 --- !u!1 &488524486
 GameObject:
   m_ObjectHideFlags: 0
@@ -3178,7 +3315,7 @@ GameObject:
   - component: {fileID: 488524488}
   - component: {fileID: 488524489}
   - component: {fileID: 488524490}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: White Pawn (3)
   m_TagString: White
   m_Icon: {fileID: 0}
@@ -3338,7 +3475,7 @@ GameObject:
   - component: {fileID: 499088867}
   - component: {fileID: 499088868}
   - component: {fileID: 499088869}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Black Pawn
   m_TagString: Black
   m_Icon: {fileID: 0}
@@ -3498,6 +3635,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: White Box (31)
       objectReference: {fileID: 0}
+    - target: {fileID: 1300549082229702, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1401518396710064, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4314938345094148, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
       propertyPath: m_RootOrder
       value: 63
@@ -3557,9 +3702,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 115099495}
     m_Modifications:
+    - target: {fileID: 1032811077064078, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1669732454229982, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
       propertyPath: m_Name
       value: Black Box (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1669732454229982, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4404517788034006, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
       propertyPath: m_RootOrder
@@ -3620,9 +3773,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 115099495}
     m_Modifications:
+    - target: {fileID: 1032811077064078, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1669732454229982, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
       propertyPath: m_Name
       value: Black Box (24)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1669732454229982, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4404517788034006, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
       propertyPath: m_RootOrder
@@ -3719,7 +3880,7 @@ MonoBehaviour:
   MaxMana: 10
   deckManager: {fileID: 579451780}
   mainCamera: {fileID: 1343649308}
-  boardCamera: {fileID: 152576527}
+  boardCamera: {fileID: 482643491}
   endTurnWhite: {fileID: 207364350}
   endTurnBlack: {fileID: 355838283}
   endPhaseButton: {fileID: 757619209}
@@ -3920,7 +4081,7 @@ GameObject:
   - component: {fileID: 577213963}
   - component: {fileID: 577213964}
   - component: {fileID: 577213965}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: White Pawn (2)
   m_TagString: White
   m_Icon: {fileID: 0}
@@ -4123,9 +4284,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 115099495}
     m_Modifications:
+    - target: {fileID: 1032811077064078, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1669732454229982, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
       propertyPath: m_Name
       value: Black Box (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1669732454229982, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4404517788034006, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
       propertyPath: m_RootOrder
@@ -4190,6 +4359,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: White Box (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1300549082229702, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1401518396710064, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4314938345094148, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -4249,9 +4426,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 115099495}
     m_Modifications:
+    - target: {fileID: 1032811077064078, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1669732454229982, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
       propertyPath: m_Name
       value: Black Box (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1669732454229982, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4404517788034006, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
       propertyPath: m_RootOrder
@@ -4312,9 +4497,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 115099495}
     m_Modifications:
+    - target: {fileID: 1032811077064078, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1669732454229982, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
       propertyPath: m_Name
       value: Black Box (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1669732454229982, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4404517788034006, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
       propertyPath: m_RootOrder
@@ -4467,7 +4660,7 @@ GameObject:
   - component: {fileID: 732431809}
   - component: {fileID: 732431810}
   - component: {fileID: 732431811}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Black Pawn (6)
   m_TagString: Black
   m_Icon: {fileID: 0}
@@ -4623,9 +4816,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 115099495}
     m_Modifications:
+    - target: {fileID: 1032811077064078, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1669732454229982, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
       propertyPath: m_Name
       value: Black Box (22)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1669732454229982, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4404517788034006, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
       propertyPath: m_RootOrder
@@ -4690,6 +4891,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: White Box (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1300549082229702, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1401518396710064, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4314938345094148, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -4753,7 +4962,7 @@ GameObject:
   - component: {fileID: 746447984}
   - component: {fileID: 746447985}
   - component: {fileID: 746447986}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: White King
   m_TagString: White
   m_Icon: {fileID: 0}
@@ -4912,6 +5121,14 @@ PrefabInstance:
     - target: {fileID: 1300549082229702, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
       propertyPath: m_Name
       value: White Box (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1300549082229702, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1401518396710064, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4314938345094148, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
       propertyPath: m_RootOrder
@@ -5097,7 +5314,7 @@ GameObject:
   - component: {fileID: 806355609}
   - component: {fileID: 806355610}
   - component: {fileID: 806355611}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Black Bishop
   m_TagString: Black
   m_Icon: {fileID: 0}
@@ -5253,9 +5470,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 115099495}
     m_Modifications:
+    - target: {fileID: 1032811077064078, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1669732454229982, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
       propertyPath: m_Name
       value: Black Box (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1669732454229982, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4404517788034006, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
       propertyPath: m_RootOrder
@@ -5320,6 +5545,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: White Box (23)
       objectReference: {fileID: 0}
+    - target: {fileID: 1300549082229702, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1401518396710064, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4314938345094148, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
       propertyPath: m_RootOrder
       value: 47
@@ -5383,7 +5616,7 @@ GameObject:
   - component: {fileID: 850721777}
   - component: {fileID: 850721778}
   - component: {fileID: 850721779}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: White Queen
   m_TagString: White
   m_Icon: {fileID: 0}
@@ -5543,7 +5776,7 @@ GameObject:
   - component: {fileID: 889189391}
   - component: {fileID: 889189392}
   - component: {fileID: 889189393}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Black Rook
   m_TagString: Black
   m_Icon: {fileID: 0}
@@ -5703,6 +5936,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: White Box (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 1300549082229702, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1401518396710064, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4314938345094148, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
       propertyPath: m_RootOrder
       value: 46
@@ -5766,7 +6007,7 @@ GameObject:
   - component: {fileID: 910398213}
   - component: {fileID: 910398214}
   - component: {fileID: 910398215}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Black Queen
   m_TagString: Black
   m_Icon: {fileID: 0}
@@ -5922,9 +6163,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 115099495}
     m_Modifications:
+    - target: {fileID: 1032811077064078, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1669732454229982, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
       propertyPath: m_Name
       value: Black Box (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1669732454229982, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4404517788034006, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
       propertyPath: m_RootOrder
@@ -6122,7 +6371,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: End Card Phase
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6149,8 +6398,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -6345,9 +6594,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 115099495}
     m_Modifications:
+    - target: {fileID: 1032811077064078, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1669732454229982, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
       propertyPath: m_Name
       value: Black Box (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1669732454229982, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4404517788034006, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
       propertyPath: m_RootOrder
@@ -6408,9 +6665,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 115099495}
     m_Modifications:
+    - target: {fileID: 1032811077064078, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1669732454229982, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
       propertyPath: m_Name
       value: Black Box (27)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1669732454229982, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4404517788034006, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
       propertyPath: m_RootOrder
@@ -6471,9 +6736,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 115099495}
     m_Modifications:
+    - target: {fileID: 1032811077064078, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1669732454229982, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
       propertyPath: m_Name
       value: Black Box (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1669732454229982, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4404517788034006, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
       propertyPath: m_RootOrder
@@ -6611,6 +6884,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: White Box (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 1300549082229702, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1401518396710064, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4314938345094148, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
       propertyPath: m_RootOrder
       value: 34
@@ -6670,9 +6951,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 115099495}
     m_Modifications:
+    - target: {fileID: 1032811077064078, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1669732454229982, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
       propertyPath: m_Name
       value: Black Box (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1669732454229982, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4404517788034006, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
       propertyPath: m_RootOrder
@@ -6781,7 +7070,7 @@ GameObject:
   - component: {fileID: 1236399991}
   - component: {fileID: 1236399992}
   - component: {fileID: 1236399993}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: White Pawn (4)
   m_TagString: White
   m_Icon: {fileID: 0}
@@ -6941,7 +7230,7 @@ GameObject:
   - component: {fileID: 1272975303}
   - component: {fileID: 1272975304}
   - component: {fileID: 1272975305}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: White Bishop (1)
   m_TagString: White
   m_Icon: {fileID: 0}
@@ -7101,6 +7390,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: White Box (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 1300549082229702, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1401518396710064, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4314938345094148, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
       propertyPath: m_RootOrder
       value: 20
@@ -7163,6 +7460,14 @@ PrefabInstance:
     - target: {fileID: 1300549082229702, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
       propertyPath: m_Name
       value: White Box (29)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1300549082229702, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1401518396710064, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4314938345094148, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
       propertyPath: m_RootOrder
@@ -7227,7 +7532,7 @@ GameObject:
   - component: {fileID: 1292312083}
   - component: {fileID: 1292312084}
   - component: {fileID: 1292312085}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Black Knight (1)
   m_TagString: Black
   m_Icon: {fileID: 0}
@@ -7387,7 +7692,7 @@ GameObject:
   - component: {fileID: 1295943668}
   - component: {fileID: 1295943669}
   - component: {fileID: 1295943670}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: White Pawn (5)
   m_TagString: White
   m_Icon: {fileID: 0}
@@ -7547,7 +7852,7 @@ GameObject:
   - component: {fileID: 1335456324}
   - component: {fileID: 1335456325}
   - component: {fileID: 1335456326}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: White Rook
   m_TagString: White
   m_Icon: {fileID: 0}
@@ -7703,9 +8008,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 115099495}
     m_Modifications:
+    - target: {fileID: 1032811077064078, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1669732454229982, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
       propertyPath: m_Name
       value: Black Box (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1669732454229982, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4404517788034006, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
       propertyPath: m_RootOrder
@@ -7829,7 +8142,7 @@ Camera:
   field of view: 26.991467
   orthographic: 1
   orthographic size: 8.298656
-  m_Depth: -1
+  m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -7871,7 +8184,7 @@ GameObject:
   - component: {fileID: 1426936317}
   - component: {fileID: 1426936318}
   - component: {fileID: 1426936319}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Black Rook (1)
   m_TagString: Black
   m_Icon: {fileID: 0}
@@ -8027,9 +8340,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 115099495}
     m_Modifications:
+    - target: {fileID: 1032811077064078, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1669732454229982, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
       propertyPath: m_Name
       value: Black Box (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1669732454229982, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4404517788034006, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
       propertyPath: m_RootOrder
@@ -8090,9 +8411,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 115099495}
     m_Modifications:
+    - target: {fileID: 1032811077064078, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1669732454229982, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
       propertyPath: m_Name
       value: Black Box (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1669732454229982, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4404517788034006, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
       propertyPath: m_RootOrder
@@ -8157,7 +8486,7 @@ GameObject:
   - component: {fileID: 1453735385}
   - component: {fileID: 1453735386}
   - component: {fileID: 1453735387}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Black Bishop (1)
   m_TagString: Black
   m_Icon: {fileID: 0}
@@ -8317,7 +8646,7 @@ GameObject:
   - component: {fileID: 1456284007}
   - component: {fileID: 1456284008}
   - component: {fileID: 1456284009}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: White Pawn (6)
   m_TagString: White
   m_Icon: {fileID: 0}
@@ -8477,7 +8806,7 @@ GameObject:
   - component: {fileID: 1484889932}
   - component: {fileID: 1484889933}
   - component: {fileID: 1484889934}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: White Pawn (7)
   m_TagString: White
   m_Icon: {fileID: 0}
@@ -8637,6 +8966,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: White Box (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 1300549082229702, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1401518396710064, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4314938345094148, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
       propertyPath: m_RootOrder
       value: 25
@@ -8768,6 +9105,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: White Box (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 1300549082229702, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1401518396710064, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4314938345094148, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
       propertyPath: m_RootOrder
       value: 35
@@ -8830,6 +9175,14 @@ PrefabInstance:
     - target: {fileID: 1300549082229702, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
       propertyPath: m_Name
       value: White Box (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1300549082229702, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1401518396710064, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4314938345094148, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
       propertyPath: m_RootOrder
@@ -8894,7 +9247,7 @@ GameObject:
   - component: {fileID: 1569968867}
   - component: {fileID: 1569968868}
   - component: {fileID: 1569968869}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: White Pawn
   m_TagString: White
   m_Icon: {fileID: 0}
@@ -9050,9 +9403,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 115099495}
     m_Modifications:
+    - target: {fileID: 1032811077064078, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1669732454229982, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
       propertyPath: m_Name
       value: Black Box (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1669732454229982, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4404517788034006, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
       propertyPath: m_RootOrder
@@ -9117,7 +9478,7 @@ GameObject:
   - component: {fileID: 1588224335}
   - component: {fileID: 1588224336}
   - component: {fileID: 1588224337}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Black Pawn (5)
   m_TagString: Black
   m_Icon: {fileID: 0}
@@ -9277,7 +9638,7 @@ GameObject:
   - component: {fileID: 1593952941}
   - component: {fileID: 1593952942}
   - component: {fileID: 1593952943}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Black Knight
   m_TagString: Black
   m_Icon: {fileID: 0}
@@ -9437,7 +9798,7 @@ GameObject:
   - component: {fileID: 1606976540}
   - component: {fileID: 1606976541}
   - component: {fileID: 1606976542}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: White Rook (1)
   m_TagString: White
   m_Icon: {fileID: 0}
@@ -9593,9 +9954,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 115099495}
     m_Modifications:
+    - target: {fileID: 1032811077064078, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1669732454229982, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
       propertyPath: m_Name
       value: Black Box (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1669732454229982, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4404517788034006, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
       propertyPath: m_RootOrder
@@ -9660,6 +10029,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: White Box (27)
       objectReference: {fileID: 0}
+    - target: {fileID: 1300549082229702, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1401518396710064, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4314938345094148, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
       propertyPath: m_RootOrder
       value: 55
@@ -9720,7 +10097,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1620984132}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Black Pieces
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9770,7 +10147,7 @@ GameObject:
   - component: {fileID: 1622985275}
   - component: {fileID: 1622985276}
   - component: {fileID: 1622985277}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Black Pawn (7)
   m_TagString: Black
   m_Icon: {fileID: 0}
@@ -9930,6 +10307,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: White Box (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 1300549082229702, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1401518396710064, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4314938345094148, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
       propertyPath: m_RootOrder
       value: 44
@@ -9993,7 +10378,7 @@ GameObject:
   - component: {fileID: 1646934807}
   - component: {fileID: 1646934808}
   - component: {fileID: 1646934809}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Black Pawn (2)
   m_TagString: Black
   m_Icon: {fileID: 0}
@@ -10152,6 +10537,14 @@ PrefabInstance:
     - target: {fileID: 1300549082229702, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
       propertyPath: m_Name
       value: White Box (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1300549082229702, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1401518396710064, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4314938345094148, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
       propertyPath: m_RootOrder
@@ -10488,6 +10881,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: White Box (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 1300549082229702, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1401518396710064, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4314938345094148, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -10547,9 +10948,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 115099495}
     m_Modifications:
+    - target: {fileID: 1032811077064078, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1669732454229982, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
       propertyPath: m_Name
       value: Black Box (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1669732454229982, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4404517788034006, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
       propertyPath: m_RootOrder
@@ -10610,9 +11019,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 115099495}
     m_Modifications:
+    - target: {fileID: 1032811077064078, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1669732454229982, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
       propertyPath: m_Name
       value: Black Box (31)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1669732454229982, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4404517788034006, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
       propertyPath: m_RootOrder
@@ -10761,9 +11178,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 115099495}
     m_Modifications:
+    - target: {fileID: 1032811077064078, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1669732454229982, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
       propertyPath: m_Name
       value: Black Box (30)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1669732454229982, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4404517788034006, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
       propertyPath: m_RootOrder
@@ -10824,9 +11249,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 115099495}
     m_Modifications:
+    - target: {fileID: 1032811077064078, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1669732454229982, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
       propertyPath: m_Name
       value: Black Box (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1669732454229982, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4404517788034006, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
       propertyPath: m_RootOrder
@@ -10979,6 +11412,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: White Box (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1300549082229702, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1401518396710064, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4314938345094148, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -11038,9 +11479,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 115099495}
     m_Modifications:
+    - target: {fileID: 1032811077064078, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1669732454229982, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
       propertyPath: m_Name
       value: Black Box (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1669732454229982, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4404517788034006, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
       propertyPath: m_RootOrder
@@ -11105,7 +11554,7 @@ GameObject:
   - component: {fileID: 1862770198}
   - component: {fileID: 1862770199}
   - component: {fileID: 1862770200}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Black Pawn (1)
   m_TagString: Black
   m_Icon: {fileID: 0}
@@ -11265,7 +11714,7 @@ GameObject:
   - component: {fileID: 1870407642}
   - component: {fileID: 1870407643}
   - component: {fileID: 1870407644}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: White Knight
   m_TagString: White
   m_Icon: {fileID: 0}
@@ -11561,6 +12010,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: White Box (24)
       objectReference: {fileID: 0}
+    - target: {fileID: 1300549082229702, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1401518396710064, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4314938345094148, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
       propertyPath: m_RootOrder
       value: 52
@@ -11620,6 +12077,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 115099495}
     m_Modifications:
+    - target: {fileID: 1032811077064078, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1669732454229982, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4404517788034006, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -11668,6 +12133,14 @@ PrefabInstance:
     - target: {fileID: 1300549082229702, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
       propertyPath: m_Name
       value: White Box (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1300549082229702, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1401518396710064, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4314938345094148, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
       propertyPath: m_RootOrder
@@ -11732,6 +12205,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: White Box (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 1300549082229702, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1401518396710064, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4314938345094148, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
       propertyPath: m_RootOrder
       value: 27
@@ -11791,9 +12272,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 115099495}
     m_Modifications:
+    - target: {fileID: 1032811077064078, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1669732454229982, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
       propertyPath: m_Name
       value: Black Box (26)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1669732454229982, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4404517788034006, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
       propertyPath: m_RootOrder
@@ -11854,6 +12343,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 115099495}
     m_Modifications:
+    - target: {fileID: 1300549082229702, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1401518396710064, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4314938345094148, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -11902,6 +12399,14 @@ PrefabInstance:
     - target: {fileID: 1300549082229702, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
       propertyPath: m_Name
       value: White Box (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1300549082229702, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1401518396710064, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4314938345094148, guid: 1ed2311f3c9efce48a289b11e71bdf33, type: 3}
       propertyPath: m_RootOrder
@@ -11962,9 +12467,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 115099495}
     m_Modifications:
+    - target: {fileID: 1032811077064078, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1669732454229982, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
       propertyPath: m_Name
       value: Black Box (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1669732454229982, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4404517788034006, guid: 70ed20772ff9a2e4e87f4f090da64ab0, type: 3}
       propertyPath: m_RootOrder
@@ -12022,8 +12535,8 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 541102416}
-  - {fileID: 152576528}
   - {fileID: 1343649309}
+  - {fileID: 482643488}
   - {fileID: 450974751}
   - {fileID: 1620984132}
   - {fileID: 115099495}
