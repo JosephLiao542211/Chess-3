@@ -24,6 +24,7 @@ public class GameController : MonoBehaviour
     public int MaxMana = 10;
     public DeckManager deckManager; // Assign it in the Unity Inspector
     public Camera mainCamera;
+    public Camera boardCamera;
     public Button endTurnWhite;
     public Button endTurnBlack;
     public Button endPhaseButton;    // Single button for ending the phase
@@ -286,7 +287,7 @@ public class GameController : MonoBehaviour
         deckManager.maxDraw = 4;
         // AL Edit: Added the logic to turn the board 
         // Rotate the camera 180 degrees to have the current player at the bottom
-        mainCamera.transform.Rotate(0, 0, 180);
+        boardCamera.transform.Rotate(0, 0, 180);
 
         // Rotate each piece to keep them facing the right way
         foreach (Transform piece in WhitePieces.transform)

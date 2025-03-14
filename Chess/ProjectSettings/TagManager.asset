@@ -8,6 +8,8 @@ TagManager:
   - Black
   - Board
   - PlayZone
+  - BoardLayer
+  - UILayer
   layers:
   - Default
   - TransparentFX
@@ -15,7 +17,7 @@ TagManager:
   - Card
   - Water
   - UI
-  - 
+  - Board
   - 
   - 
   - 

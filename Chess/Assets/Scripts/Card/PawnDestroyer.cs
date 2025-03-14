@@ -6,6 +6,7 @@ public class PawnDestroyer : MonoBehaviour
 {
     private bool isActive = false; // Tracks if the player is selecting a pawn to destroy
     private string opponentTag; // Stores the opponent's piece tag ("White" or "Black")
+    public Camera boardCamera; // A reference to the camera that views the chessboard
 
     public void Activate()
     {
@@ -18,7 +19,8 @@ public class PawnDestroyer : MonoBehaviour
     {
         if (isActive && Input.GetMouseButtonDown(0))
         {
-            RaycastHit2D hit = Physics2D.GetRayIntersection(Camera.main.ScreenPointToRay(Input.mousePosition));
+            // Use the board camera for raycasting, rather than Camera.main
+            RaycastHit2D hit = Physics2D.GetRayIntersection(boardCamera.ScreenPointToRay(Input.mousePosition));
 
             if (hit.collider != null)
             {
