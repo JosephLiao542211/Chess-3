@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: e2e634d1251a8b24481907e0701f1554
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - pawnDestroyer: {instanceID: 0}
+  - addHealth: {instanceID: 0}
+  - pawnDoubleMove: {instanceID: 0}
+  - playZone: {instanceID: 0}
+  - inspectPanel: {instanceID: 0}
+  - descriptionText: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
