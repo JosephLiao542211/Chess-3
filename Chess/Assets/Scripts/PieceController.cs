@@ -142,9 +142,9 @@ public class PieceController : MonoBehaviour
                 }
             }
 
-            if (!GameController.SpendMana(-1)) {//on a -1 it will use half the mana cost)
-                return false; //stop the move if you can't afford
-            }
+            //if (!GameController.SpendMana(-1)) {//on a -1 it will use half the mana cost)
+            //    return false; //stop the move if you can't afford
+            //}
             // Double-step
 
             if (this.name.Contains("Pawn") && Mathf.Abs(oldPosition.y - newPosition.y) == 2)

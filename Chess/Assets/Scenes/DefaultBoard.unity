@@ -308,6 +308,50 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 58866971}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &64533808
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 64533810}
+  - component: {fileID: 64533809}
+  m_Layer: 0
+  m_Name: ManaManger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &64533809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64533808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3eb3dd25422ff2a42a868c61582d3be2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &64533810
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64533808}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &66783690
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3609,21 +3653,13 @@ MonoBehaviour:
   BlackPieces: {fileID: 1620984131}
   TurnCount: 1
   initMana: 3
-  whiteMana: 0
-  blackMana: 0
-  whiteManaSpent: 0
-  blackManaSpent: 0
   SelectedPiece: {fileID: 0}
   WhiteTurn: 1
   MaxMana: 10
   deckManager: {fileID: 579451780}
   mainCamera: {fileID: 1343649308}
-  endTurnWhite: {fileID: 207364350}
-  endTurnBlack: {fileID: 355838283}
-  endPhaseButton: {fileID: 757619209}
-  WhiteManaText: {fileID: 1891987774}
-  BlackManaText: {fileID: 471433461}
-  PhaseText: {fileID: 1678674348}
+  manaManager: {fileID: 64533809}
+  uiManager: {fileID: 0}
   currentPhase: 0
   maxMovesPerTurn: 1
   movesRemaining: 0
@@ -6623,6 +6659,57 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1146808320}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1176462802
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1176462804}
+  - component: {fileID: 1176462803}
+  m_Layer: 0
+  m_Name: UIManger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1176462803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1176462802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1329eaccbe6a134fb409e92fdbbce52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whiteManaText: {fileID: 1891987774}
+  blackManaText: {fileID: 471433461}
+  phaseText: {fileID: 1678674348}
+  turnIndicatorText: {fileID: 0}
+  endTurnWhiteButton: {fileID: 0}
+  endTurnBlackButton: {fileID: 0}
+  endPhaseButton: {fileID: 0}
+--- !u!4 &1176462804
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1176462802}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.2694411, y: -1.577888, z: 0.03057069}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1193180448
 GameObject:
   m_ObjectHideFlags: 0
@@ -11919,7 +12006,9 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1176462804}
   - {fileID: 541102416}
+  - {fileID: 64533810}
   - {fileID: 1343649309}
   - {fileID: 450974751}
   - {fileID: 1620984132}

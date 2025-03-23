@@ -15,23 +15,15 @@ public class GameController : MonoBehaviour
     public GameObject BlackPieces;
     public int TurnCount = 1;
     public int initMana;
-    public int whiteMana;
-    public int blackMana;
-    public int whiteManaSpent;
-    public int blackManaSpent;
     public GameObject SelectedPiece;
     public bool WhiteTurn = true;
     public int MaxMana = 10;
     public DeckManager deckManager; // Assign it in the Unity Inspector
     public Camera mainCamera;
-    public Button endTurnWhite;
-    public Button endTurnBlack;
-    public Button endPhaseButton;    // Single button for ending the phase
 
-    public TextMeshProUGUI WhiteManaText;
-    public TextMeshProUGUI BlackManaText;
-    public TextMeshProUGUI PhaseText;
-    
+    // Manager references
+    public ManaManager manaManager; // Reference to the ManaManager
+    public UIManager uiManager;    // Reference to the UIManager
 
     // Phase management
     public enum GamePhase { CardPhase, MovePhase }
@@ -43,18 +35,35 @@ public class GameController : MonoBehaviour
     void Start()
     {
         mainCamera = Camera.main; // Find the main camera
-        //Set initial mana values
-        whiteMana = initMana;
-        blackMana = initMana;
-        whiteManaSpent = 0;
-        blackManaSpent = 0;
+
+        // Initialize ManaManager if not assigned
+        if (manaManager == null)
+        {
+            manaManager = GetComponent<ManaManager>();
+            if (manaManager == null)
+            {
+                manaManager = gameObject.AddComponent<ManaManager>();
+            }
+        }
+
+        // Initialize UIManager if not assigned
+        if (uiManager == null)
+        {
+            uiManager = GetComponent<UIManager>();
+            if (uiManager == null)
+            {
+                uiManager = gameObject.AddComponent<UIManager>();
+            }
+        }
+
+        // Initialize mana through the manaManager
+        manaManager.Initialize(initMana, MaxMana, uiManager);
+
+        // Initialize UI
+        uiManager.Initialize();
+
         movesRemaining = maxMovesPerTurn;
-        UpdateManaUI();
-        UpdatePhaseUI();
-        //Buttons
-        endTurnWhite.onClick.AddListener(() => ButtonEndTurn(true));
-        endTurnBlack.onClick.AddListener(() => ButtonEndTurn(false));
-        endPhaseButton.onClick.AddListener(EndCardPhase);
+        uiManager.UpdatePhaseUI(currentPhase);
     }
 
     // Update is called once per frame
@@ -114,17 +123,9 @@ public class GameController : MonoBehaviour
         }
     }
 
-    void ButtonEndTurn(bool White)
+    // Public method to be called from UIManager
+    public void EndCardPhase()
     {
-        if ((White && WhiteTurn) || (!White && !WhiteTurn))
-        {
-            EndTurn();
-        }
-    }
-
-    void EndCardPhase()
-    {
-
         // Only allow ending card phase for the current player's turn
         if (currentPhase == GamePhase.CardPhase)
         {
@@ -134,10 +135,10 @@ public class GameController : MonoBehaviour
 
     void SwitchToMovePhase()
     {
-        
         currentPhase = GamePhase.MovePhase;
         movesRemaining = maxMovesPerTurn;
-        UpdatePhaseUI();
+        uiManager.UpdatePhaseUI(currentPhase);
+        uiManager.UpdateMovesRemainingUI(movesRemaining);
     }
 
     public void SelectPiece(GameObject piece)
@@ -186,7 +187,7 @@ public class GameController : MonoBehaviour
             SelectedPiece = null;
         }
     }
-    
+
     public void ActivatePawnDoubleMove(GameObject pawn)
     {
         if (pawn != null && pawn.name.Contains("Pawn"))
@@ -211,7 +212,7 @@ public class GameController : MonoBehaviour
         if (currentPhase == GamePhase.MovePhase)
         {
             movesRemaining--;
-            UpdatePhaseUI();
+            uiManager.UpdateMovesRemainingUI(movesRemaining);
 
             if (movesRemaining <= 0)
             {
@@ -222,36 +223,8 @@ public class GameController : MonoBehaviour
 
     public bool SpendMana(int cost = 1)
     {
-        if (WhiteTurn)
-        {
-            if (cost == -1)
-            {
-                cost = (int)Floor((decimal)whiteMana / 2);
-            }
-
-            if ((whiteMana - whiteManaSpent - cost) < 0)
-            {
-                return false;
-            }
-            whiteManaSpent += cost;
-        }
-        else if (!WhiteTurn)
-        {
-            if (cost == -1)
-            {
-                cost = (int)Floor((decimal)blackMana / 2);
-            }
-
-            if ((blackMana - blackManaSpent - cost) < 0)
-            {
-                return false;
-            }
-
-            blackManaSpent += cost;
-        }
-
-        UpdateManaUI();
-        return true;
+        // Delegate to ManaManager
+        return manaManager.SpendMana(WhiteTurn, cost);
     }
 
     public void EndTurn()
@@ -260,28 +233,16 @@ public class GameController : MonoBehaviour
         bool kingIsInCheck = false;
         bool hasValidMoves = false;
 
-        //Update mana values
-        if (!WhiteTurn)
-        {
-            TurnCount++;
-            whiteMana = Min(TurnCount+initMana, MaxMana);
-            whiteManaSpent = 0;
-            Debug.Log(whiteMana);
-        }
-        else
-        {
-            blackMana = Min(TurnCount+initMana, MaxMana);
-            blackManaSpent = 0;
-            Debug.Log(blackMana);
-        }
-
-        UpdateManaUI();
+        // Update mana values using ManaManager
+        TurnCount = WhiteTurn ? TurnCount : TurnCount + 1;
+        manaManager.UpdateManaForNewTurn(WhiteTurn, TurnCount, initMana);
 
         WhiteTurn = !WhiteTurn;
+        uiManager.UpdateTurnIndicator(WhiteTurn);
 
         // Reset to Card Phase at the start of each turn
         currentPhase = GamePhase.CardPhase;
-        UpdatePhaseUI();
+        uiManager.UpdatePhaseUI(currentPhase);
 
         deckManager.maxDraw = 4;
         // AL Edit: Added the logic to turn the board 
@@ -388,34 +349,12 @@ public class GameController : MonoBehaviour
     void Stalemate()
     {
         Debug.Log("Stalemate!");
+        uiManager.ShowGameOverState(false);
     }
 
     void Checkmate()
     {
         Debug.Log("Checkmate!");
-    }
-
-    void UpdateManaUI()
-    {
-        WhiteManaText.text = "White Mana: " + (whiteMana - whiteManaSpent);
-        BlackManaText.text = "Black Mana: " + (blackMana - blackManaSpent);
-    }
-
-    void UpdatePhaseUI()
-    {
-        string phaseString = currentPhase == GamePhase.CardPhase ? "Card Phase" : "Move Phase";
-        PhaseText.text = "Current Phase: " + phaseString;
-
-        if (currentPhase == GamePhase.MovePhase)
-        {
-            //MovesRemainingText.text = "Moves Remaining: " + movesRemaining;
-            // You might want to disable the phase end button during Move Phase
-            endPhaseButton.interactable = false;
-        }
-        else
-        {
-            //MovesRemainingText.text = "";
-            endPhaseButton.interactable = true;
-        }
+        uiManager.ShowGameOverState(true);
     }
 }
