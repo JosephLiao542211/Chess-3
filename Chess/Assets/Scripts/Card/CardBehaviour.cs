@@ -10,6 +10,7 @@ public class CardBehaviour : MonoBehaviour
     private bool isDragging = false;
     private Vector3 offset;
     public PawnDestroyer pawnDestroyer;
+    public DeathTileCard deathTileCard;
     public HealthAdder addHealth;
     public PawnDoubleMove pawnDoubleMove;
     public StackPawn stackPawn;
@@ -33,6 +34,12 @@ public class CardBehaviour : MonoBehaviour
         {
             addHealth = FindFirstObjectByType<HealthAdder>(); // Try to find it if not assigned
         }
+
+        if (deathTileCard == null)
+        {
+            deathTileCard = FindFirstObjectByType<DeathTileCard>();
+        }
+
         if (pawnDoubleMove == null)
         {
             pawnDoubleMove = FindFirstObjectByType<PawnDoubleMove>();
@@ -42,6 +49,7 @@ public class CardBehaviour : MonoBehaviour
             stackPawn = FindFirstObjectByType<StackPawn>();
         }
         
+
 
         // Find the card's original slot by checking DeckManager's dictionaries
         FindOriginalSlot();
@@ -78,7 +86,8 @@ public class CardBehaviour : MonoBehaviour
                 break;
 
             case "Card 4":
-                Debug.Log("Card4: No special ability.");
+                deathTileCard.Activate();
+                Debug.Log("Card4: Playing Deathtile.");
                 break;
 
             case "Card 5":

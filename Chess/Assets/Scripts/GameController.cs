@@ -27,8 +27,10 @@ public class GameController : MonoBehaviour
     public Camera boardCamera;
     public Button endTurnWhite;
     public Button endTurnBlack;
-    public Button endPhaseButton;    // Single button for ending the phase
 
+    public delegate void TurnEndHandler();
+    public event TurnEndHandler OnTurnEnd;
+    public Button endPhaseButton;    // Single button for ending the phase
     public TextMeshProUGUI WhiteManaText;
     public TextMeshProUGUI BlackManaText;
     public TextMeshProUGUI PhaseText;
@@ -254,7 +256,7 @@ public class GameController : MonoBehaviour
         UpdateManaUI();
         return true;
     }
-
+    
     public void EndTurn()
     {
         UpdatePieceColors();
@@ -368,6 +370,9 @@ public class GameController : MonoBehaviour
                 Checkmate();
             }
         }
+
+        OnTurnEnd?.Invoke();
+
     }
 
     bool HasValidMoves(GameObject piece)

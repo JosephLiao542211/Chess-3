@@ -8,6 +8,7 @@ TagManager:
   - Black
   - Board
   - PlayZone
+  - Tile
   - BoardLayer
   - UILayer
   layers:

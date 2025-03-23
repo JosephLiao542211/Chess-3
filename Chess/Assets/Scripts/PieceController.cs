@@ -178,11 +178,20 @@ public class PieceController : MonoBehaviour
                     rook.GetComponent<PieceController>().MovePiece(newRookPosition, true);
                 }
             }
+
+            
+
             this.moved = true;
             this.newPositionY = newPosition;
             this.newPositionY.x = this.transform.position.x;
             this.newPositionX = newPosition;
             MovingY = true; // Start movement
+
+            DeathTileCard deathTileCard = FindFirstObjectByType<DeathTileCard>();
+            if (deathTileCard != null)
+            {
+                deathTileCard.OnPieceMoved(this.gameObject);
+            }
             return true;
         }
         else

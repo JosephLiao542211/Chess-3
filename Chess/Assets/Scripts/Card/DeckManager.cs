@@ -93,7 +93,7 @@ public class DeckManager : MonoBehaviour
             CardData card = new CardData();
             card.cardName = "Card " + (i + 1);
             card.cardSprite = Resources.Load<Sprite>("CardSprites/Card" + (i + 1)); // Ensure sprites are in "Resources/CardSprites/"
-            card.cardCost = cardCosts[i];
+            card.cardCost = 1;
             newDeck.Add(card);
         }
         return newDeck;
