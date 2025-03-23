@@ -5,7 +5,25 @@ using Debug = UnityEngine.Debug;
 public class HealthAdder : MonoBehaviour
 {
     public GameController gameController; // Reference to the GameController
+    private PieceSelectionUtility selectionUtility; // Reference to the selection utility
     private bool isActive = false; // Tracks whether the listener is active
+
+    private void Start()
+    {
+        // Get references if not assigned
+        if (gameController == null)
+        {
+            gameController = FindFirstObjectByType<GameController>();
+        }
+
+        // Find the selection utility
+        selectionUtility = PieceSelectionUtility.Instance;
+        if (selectionUtility == null)
+        {
+            selectionUtility = FindFirstObjectByType<PieceSelectionUtility>();
+            Debug.LogWarning("PieceSelectionUtility not found as a singleton. Using FindObjectOfType instead.");
+        }
+    }
 
     // Public method to activate the listener
     public void Activate()
@@ -39,24 +57,37 @@ public class HealthAdder : MonoBehaviour
         // Only check for mouse clicks if the listener is active
         if (isActive && Input.GetMouseButtonDown(0))
         {
-            // Raycast to detect which piece was clicked
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
-            if (hit.collider != null)
+            // Use the utility to handle selection regardless of camera rotation
+            Vector3 mousePos = Input.mousePosition;
+            Vector3 worldPos = selectionUtility.ScreenToWorldPointOnBoard(mousePos);
+
+            GameObject selectedPiece = selectionUtility.SelectPieceAtPosition(worldPos);
+
+            if (selectedPiece != null)
             {
-                PieceController piece = hit.collider.GetComponent<PieceController>();
+                PieceController piece = selectedPiece.GetComponent<PieceController>();
+
                 // Check if the clicked piece is a knight
-                if (piece != null && piece.name.Contains("Knight"))
+                if (piece != null && selectedPiece.name.Contains("Knight"))
                 {
-                    // Add +1 health to the knight
-                    piece.numLives++;
-                    Debug.Log($"{piece.name} now has {piece.numLives} lives.");
+                    // Validate this is a piece that belongs to the current player
+                    bool isWhitePiece = selectedPiece.CompareTag("White");
+                    if ((isWhitePiece && gameController.WhiteTurn) || (!isWhitePiece && !gameController.WhiteTurn))
+                    {
+                        // Add +1 health to the knight
+                        piece.numLives++;
+                        Debug.Log($"{piece.name} now has {piece.numLives} lives.");
 
-                    // Set the knight's color to green
-                    hit.collider.GetComponent<SpriteRenderer>().color = Color.green;
+                        // Update the colors of all pieces to ensure consistent appearance
+                        gameController.UpdatePieceColors();
 
-                    // Auto-deactivate after successfully adding health
-                    Deactivate();
+                        // Auto-deactivate after successfully adding health
+                        Deactivate();
+                    }
+                    else
+                    {
+                        Debug.Log("You can only select your own knights.");
+                    }
                 }
                 else
                 {
