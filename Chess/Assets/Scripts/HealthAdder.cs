@@ -42,7 +42,6 @@ public class HealthAdder : MonoBehaviour
             // Raycast to detect which piece was clicked
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
-
             if (hit.collider != null)
             {
                 PieceController piece = hit.collider.GetComponent<PieceController>();
@@ -52,6 +51,9 @@ public class HealthAdder : MonoBehaviour
                     // Add +1 health to the knight
                     piece.numLives++;
                     Debug.Log($"{piece.name} now has {piece.numLives} lives.");
+
+                    // Set the knight's color to green
+                    hit.collider.GetComponent<SpriteRenderer>().color = Color.green;
 
                     // Auto-deactivate after successfully adding health
                     Deactivate();

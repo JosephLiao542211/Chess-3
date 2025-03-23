@@ -9,14 +9,16 @@ TagManager:
   - Board
   - PlayZone
   - Tile
+  - BoardLayer
+  - UILayer
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Card
   - Water
   - UI
-  - 
+  - Board
   - 
   - 
   - 

@@ -21,6 +21,8 @@ public class PieceController : MonoBehaviour
     [HideInInspector]
     public bool DoubleStep = false;
     [HideInInspector]
+    public bool DoubleMoveEnabled = false; // New field for double move enhancement
+    public bool CanMoveDiagonally = false; // For StackPawn
     public bool MovingY = false;
     [HideInInspector]
     public bool MovingX = false;
@@ -30,7 +32,7 @@ public class PieceController : MonoBehaviour
     private Vector3 newPositionX;
 
     private bool moved = false;
-
+    
     // Use this for initialization
     void Start()
     {
@@ -117,7 +119,7 @@ public class PieceController : MonoBehaviour
 
         newPosition.z = this.transform.position.z;
         this.oldPosition = this.transform.position;
-
+        Debug.Log($"Attempting to move {this.name} to {newPosition}. CanMoveDiagonally={this.CanMoveDiagonally}");
         if (castling || ValidateMovement(oldPosition, newPosition, out encounteredEnemy))
         {
             if (encounteredEnemy != null)
@@ -130,7 +132,7 @@ public class PieceController : MonoBehaviour
                     enemyPiece.LoseLife();
                     // Switch turns after the attack
                     GameController.DeselectPiece();
-                    GameController.EndTurn();
+                    //GameController.EndTurn();
                     return false; // Stop the move
                 }
                 else
@@ -204,8 +206,12 @@ public class PieceController : MonoBehaviour
         bool isValid = false;
         encounteredEnemy = GetPieceOnPosition(newPosition.x, newPosition.y);
 
+        // Declare otherPiece here so it's accessible in all blocks
+        GameObject otherPiece = null;
+
         if ((oldPosition.x == newPosition.x && oldPosition.y == newPosition.y) || encounteredEnemy != null && encounteredEnemy.tag == this.tag)
         {
+            Debug.Log("Invalid move: Same position or friendly piece encountered.");
             return false;
         }
 
@@ -296,63 +302,98 @@ public class PieceController : MonoBehaviour
             }
         }
 
-        if (this.name.Contains("Pawn"))
+       if (this.name.Contains("Pawn"))
+    {
+        //Debug.Log($"Validating movement for {this.name}. DoubleMoveEnabled={this.DoubleMoveEnabled}, moved={this.moved}, CanMoveDiagonally={this.CanMoveDiagonally}");
+
+        // Special diagonal movement for merged pawns (only allowed if CanMoveDiagonally is true)
+        if (this.CanMoveDiagonally && (oldPosition.x == newPosition.x - 1 || oldPosition.x == newPosition.x + 1))
         {
-            // If the new position is on the rank above (White) or below (Black)
-            if ((this.tag == "White" && oldPosition.y + 1 == newPosition.y) ||
-               (this.tag == "Black" && oldPosition.y - 1 == newPosition.y))
+            Debug.Log($"Attempting diagonal move for {this.name}. CanMoveDiagonally={this.CanMoveDiagonally}");
+            otherPiece = GetPieceOnPosition(newPosition.x, newPosition.y);
+
+            // Check if an enemy piece is encountered
+            if (otherPiece != null && otherPiece.tag != this.tag)
             {
-                GameObject otherPiece = GetPieceOnPosition(newPosition.x, newPosition.y);
-
-                // If moving forward
-                if (oldPosition.x == newPosition.x && otherPiece == null)
+                Debug.Log("Valid move: Diagonal capture (stacked pawn).");
+                if (excludeCheck == true || (excludeCheck == false && IsInCheck(newPosition) == false))
                 {
-                    if (excludeCheck == true || (excludeCheck == false && IsInCheck(newPosition) == false))
-                    {
-                        isValid = true;
-                    }
+                    isValid = true;
                 }
-                // If moving diagonally
-                else if (oldPosition.x == newPosition.x - 1 || oldPosition.x == newPosition.x + 1)
-                {
-                    // Check if en passant is available
-                    if (otherPiece == null)
-                    {
-                        otherPiece = GetPieceOnPosition(newPosition.x, oldPosition.y);
-                        if (otherPiece != null && otherPiece.GetComponent<PieceController>().DoubleStep == false)
-                        {
-                            otherPiece = null;
-                        }
-                    }
-                    // If an enemy piece is encountered
-                    if (otherPiece != null && otherPiece.tag != this.tag)
-                    {
-                        if (excludeCheck == true || (excludeCheck == false && IsInCheck(newPosition) == false))
-                        {
-                            isValid = true;
-                        }
-                    }
-                }
-
-                encounteredEnemy = otherPiece;
             }
-            // Double-step
-            else if ((this.tag == "White" && oldPosition.x == newPosition.x && oldPosition.y + 2 == newPosition.y) ||
-                     (this.tag == "Black" && oldPosition.x == newPosition.x && oldPosition.y - 2 == newPosition.y))
+            else if (otherPiece == null)
             {
-                if (this.moved == false && GetPieceOnPosition(newPosition.x, newPosition.y) == null)
+                Debug.Log("Valid move: Diagonal movement (stacked pawn).");
+                if (excludeCheck == true || (excludeCheck == false && IsInCheck(newPosition) == false))
                 {
-                    if (excludeCheck == true || (excludeCheck == false && IsInCheck(newPosition) == false))
-                    {
-                        isValid = true;
-                    }
+                    isValid = true;
                 }
             }
         }
+        // Normal pawn movement (1 square forward)
+        else if ((this.tag == "White" && oldPosition.y + 1 == newPosition.y) || (this.tag == "Black" && oldPosition.y - 1 == newPosition.y))
+        {
+            otherPiece = GetPieceOnPosition(newPosition.x, newPosition.y);
 
-        return isValid;
+            // If moving forward
+            if (oldPosition.x == newPosition.x && otherPiece == null)
+            {
+                Debug.Log("Valid move: Forward movement.");
+                if (excludeCheck == true || (excludeCheck == false && IsInCheck(newPosition) == false))
+                {
+                    isValid = true;
+                }
+            }
+            // If moving diagonally (normal pawn rules for capturing)
+            else if (oldPosition.x == newPosition.x - 1 || oldPosition.x == newPosition.x + 1)
+            {
+                Debug.Log("Attempting diagonal move (normal pawn rules).");
+                // Check if en passant is available
+                if (otherPiece == null)
+                {
+                    otherPiece = GetPieceOnPosition(newPosition.x, oldPosition.y);
+                    if (otherPiece != null && otherPiece.GetComponent<PieceController>().DoubleStep == false)
+                    {
+                        otherPiece = null;
+                    }
+                }
+                // If an enemy piece is encountered
+                if (otherPiece != null && otherPiece.tag != this.tag)
+                {
+                    Debug.Log("Valid move: Diagonal capture.");
+                    if (excludeCheck == true || (excludeCheck == false && IsInCheck(newPosition) == false))
+                    {
+                        isValid = true;
+                    }
+                }
+            }
+
+            encounteredEnemy = otherPiece;
+        }
+        // Double-step (initial double move for pawns)
+        else if ((this.tag == "White" && oldPosition.x == newPosition.x && oldPosition.y + 2 == newPosition.y) ||
+                 (this.tag == "Black" && oldPosition.x == newPosition.x && oldPosition.y - 2 == newPosition.y))
+        {
+            Debug.Log($"Checking double move for {this.name}. DoubleMoveEnabled={this.DoubleMoveEnabled}, moved={this.moved}");
+
+            // Allow double move if DoubleMoveEnabled is true OR if it's the pawn's first move
+            if ((this.DoubleMoveEnabled || this.moved == false) && GetPieceOnPosition(newPosition.x, newPosition.y) == null)
+            {
+                Debug.Log($"{this.name} can move two squares!");
+                if (excludeCheck == true || (excludeCheck == false && IsInCheck(newPosition) == false))
+                {
+                    isValid = true;
+                }
+            }
+            else
+            {
+                Debug.Log($"{this.name} double move failed! Conditions not met.");
+            }
+        }
     }
 
+    return isValid;
+}
     /// <summary>
     /// 
     /// </summary>
@@ -425,25 +466,26 @@ public class PieceController : MonoBehaviour
     {
         bool isInCheck = false;
 
-        // Temporarily move piece to the wanted position
+        // Temporarily move the piece to the potential position
         Vector3 currentPosition = this.transform.position;
-        this.transform.SetPositionAndRotation(potentialPosition, this.transform.rotation);
+        this.transform.position = potentialPosition;
 
-        GameObject encounteredEnemy;
-
+        // Check if the king is in check
         if (this.tag == "Black")
         {
             Vector3 kingPosition = BlackPieces.transform.Find("Black King").position;
             foreach (Transform piece in WhitePieces.transform)
             {
-                // If piece is not potentially captured
-                if (piece.position.x != potentialPosition.x || piece.position.y != potentialPosition.y) {
-                    if (piece.GetComponent<PieceController>().ValidateMovement(piece.position, kingPosition, out encounteredEnemy, true))
-                    {
-                        Debug.Log("Black King is in check by: " + piece);
-                        isInCheck = true;
-                        break;
-                    }
+                // Skip the piece being moved
+                if (piece.position == potentialPosition)
+                    continue;
+
+                GameObject encounteredEnemy;
+                if (piece.GetComponent<PieceController>().ValidateMovement(piece.position, kingPosition, out encounteredEnemy, true))
+                {
+                    Debug.Log($"Black King is in check by: {piece.name}");
+                    isInCheck = true;
+                    break;
                 }
             }
         }
@@ -452,24 +494,24 @@ public class PieceController : MonoBehaviour
             Vector3 kingPosition = WhitePieces.transform.Find("White King").position;
             foreach (Transform piece in BlackPieces.transform)
             {
-                // If piece is not potentially captured
-                if (piece.position.x != potentialPosition.x || piece.position.y != potentialPosition.y)
+                // Skip the piece being moved
+                if (piece.position == potentialPosition)
+                    continue;
+
+                GameObject encounteredEnemy;
+                if (piece.GetComponent<PieceController>().ValidateMovement(piece.position, kingPosition, out encounteredEnemy, true))
                 {
-                    if (piece.GetComponent<PieceController>().ValidateMovement(piece.position, kingPosition, out encounteredEnemy, true))
-                    {
-                        Debug.Log("White King is in check by: " + piece);
-                        isInCheck = true;
-                        break;
-                    }
+                    Debug.Log($"White King is in check by: {piece.name}");
+                    isInCheck = true;
+                    break;
                 }
             }
         }
 
-        // Move back to the real position
-        this.transform.SetPositionAndRotation(currentPosition, this.transform.rotation);
+        // Move the piece back to its original position
+        this.transform.position = currentPosition;
         return isInCheck;
     }
-
     void MoveSideBySide()
     {
         if (MovingY == true)
@@ -491,6 +533,7 @@ public class PieceController : MonoBehaviour
                 if (GameController.SelectedPiece != null)
                 {
                     GameController.DeselectPiece();
+                    GameController.movesRemaining -=1;
                     //GameController.EndTurn();
                 }
             }
@@ -510,7 +553,9 @@ public class PieceController : MonoBehaviour
                 if (GameController.SelectedPiece != null)
                 {
                     GameController.DeselectPiece();
-                    GameController.EndTurn();
+                    //MAYEBE END TURN TBD
+                    GameController.movesRemaining -= 1;
+                    //GameController.EndTurn();
                 }
             }
         }
