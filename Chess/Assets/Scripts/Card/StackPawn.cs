@@ -67,22 +67,42 @@ public class StackPawn : MonoBehaviour
                (Mathf.Abs(pos1.y - pos2.y) == 1 && pos1.x == pos2.x);   // Adjacent vertically
     }
     private void StackPawns(GameObject pawn1, GameObject pawn2)
-{
-    // Choose one pawn to be the "stacked" pawn
-    GameObject stackedPawn = pawn1;
-    Destroy(pawn2); // Remove the second pawn
+    {
+        // Choose one pawn to be the "stacked" pawn
+        GameObject stackedPawn = pawn1;
+        Destroy(pawn2); // Remove the second pawn
 
-    // Modify the stacked pawn's movement capabilities
-    PieceController pawnController = stackedPawn.GetComponent<PieceController>();
-    if (pawnController != null)
-    {
-        pawnController.CanMoveDiagonally = true; // Allow diagonal movement
-        Debug.Log($"Pawns stacked! {stackedPawn.name} can now move diagonally. CanMoveDiagonally: {pawnController.CanMoveDiagonally}");
+        // Modify the stacked pawn's movement capabilities
+        PieceController pawnController = stackedPawn.GetComponent<PieceController>();
+        if (pawnController != null)
+        {
+            pawnController.CanMoveDiagonally = true; // Allow diagonal movement
+            Debug.Log($"Pawns stacked! {stackedPawn.name} can now move diagonally. CanMoveDiagonally: {pawnController.CanMoveDiagonally}");
+
+            // Update sprite based on pawn tag
+            SpriteRenderer spriteRenderer = stackedPawn.GetComponent<SpriteRenderer>();
+            if (spriteRenderer != null)
+            {
+                // Check tag and set appropriate sprite
+                if (stackedPawn.CompareTag("Black"))
+                {
+                    spriteRenderer.sprite = Resources.Load<Sprite>("bpawn2-b");
+                }
+                else if (stackedPawn.CompareTag("White"))
+                {
+                    spriteRenderer.sprite = Resources.Load<Sprite>("bpawn2-w");
+                }
+                Debug.Log($"Updated sprite for stacked pawn: {stackedPawn.name}");
+            }
+            else
+            {
+                Debug.LogError("Selected pawn does not have a SpriteRenderer component.");
+            }
+        }
+        else
+        {
+            Debug.LogError("Selected pawn does not have a PieceController component.");
+        }
     }
-    else
-    {
-        Debug.LogError("Selected pawn does not have a PieceController component.");
-    }
-}
 }
 

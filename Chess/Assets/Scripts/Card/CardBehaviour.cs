@@ -86,8 +86,8 @@ public class CardBehaviour : MonoBehaviour
                 break;
 
             case "Card 4":
-                deathTileCard.Activate();
-                Debug.Log("Card4: Playing Deathtile.");
+                stackPawn.Activate();
+                Debug.Log("Card4: Stack card activated");
                 break;
 
             case "Card 5":
